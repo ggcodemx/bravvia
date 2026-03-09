@@ -1,0 +1,262 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useReveal } from '../hooks/useReveal';
+import ProjectCard from '../components/ProjectCard';
+import NewsCard from '../components/NewsCard';
+import { projects, news } from '../data';
+
+/**
+ * HomePage
+ * Full-page hero with video, projects scroll, and news section.
+ */
+export default function HomePage() {
+  useReveal();
+
+  useEffect(() => {
+    document.title = 'Bravvia Agency | Global Branding';
+  }, []);
+
+  return (
+    <>
+      {/* ── Hero ── */}
+      <main
+        style={{
+          position: 'relative',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          paddingTop: '5rem',
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        >
+          <source src="/fondo.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.3)',
+            zIndex: 5,
+          }}
+        />
+
+        {/* Bottom-left tagline */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '2.5rem',
+            left: '2rem',
+            zIndex: 50,
+            mixBlendMode: 'difference',
+          }}
+        >
+          <h2
+            style={{
+              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontWeight: 300,
+              lineHeight: 1,
+            }}
+          >
+            Make it a brand.
+          </h2>
+        </div>
+      </main>
+
+      {/* ── Brand statement ── */}
+      <section
+        style={{
+          position: 'relative',
+          zIndex: 30,
+          background: 'var(--bg-dark)',
+          padding: '10rem 2rem',
+        }}
+      >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            maxWidth: '90rem',
+            margin: '0 auto',
+          }}
+        >
+          <h2
+            className="reveal"
+            style={{
+              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+              fontWeight: 300,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.05,
+            }}
+          >
+            We are an independent brand consultancy. We build
+            <br /> what it stands for, how it speaks, and why it matters.
+          </h2>
+        </div>
+      </section>
+
+      {/* ── Projects scroll ── */}
+      <section
+        style={{
+          position: 'relative',
+          zIndex: 30,
+          background: 'var(--bg-dark)',
+          padding: '10rem 2rem',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '90rem',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16rem',
+          }}
+        >
+          {projects.map((project, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div
+                key={project.id}
+                className="reveal"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(12, 1fr)',
+                  gap: '3rem',
+                  alignItems: 'center',
+                }}
+              >
+                {/* Text */}
+                <div
+                  style={{
+                    gridColumn: isEven ? '1 / 5' : '8 / 13',
+                    gridRow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.5rem',
+                    order: isEven ? 1 : 2,
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                      fontWeight: 300,
+                      letterSpacing: '-0.04em',
+                      lineHeight: 1,
+                    }}
+                  >
+                    {project.title}
+                  </h2>
+                  <h3
+                    style={{
+                      fontSize: '1.25rem',
+                      color: 'rgba(255,255,255,0.5)',
+                      fontWeight: 300,
+                      letterSpacing: '-0.03em',
+                      lineHeight: 1,
+                    }}
+                  >
+                    {project.type}
+                  </h3>
+                  <p
+                    style={{
+                      color: 'white',
+                      lineHeight: 1.7,
+                      letterSpacing: '0.03em',
+                      maxWidth: '24rem',
+                    }}
+                  >
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Image */}
+                <div
+                  style={{
+                    gridColumn: isEven ? '5 / 13' : '1 / 8',
+                    gridRow: 1,
+                    order: isEven ? 2 : 1,
+                  }}
+                >
+                  <ProjectCard project={project} aspect="16/10" showMeta={false} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── News Section ── */}
+      <section style={{ background: 'black', padding: '6rem 2rem', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '88rem', margin: '0 auto' }}>
+          <h2
+            className="reveal"
+            style={{
+              fontSize: '1.25rem',
+              fontWeight: 300,
+              letterSpacing: '-0.04em',
+              marginBottom: '3rem',
+            }}
+          >
+            Insights&nbsp;&nbsp;•&nbsp;&nbsp;News&nbsp;&nbsp;•&nbsp;&nbsp;Press
+          </h2>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
+            {/* Featured card */}
+            <div style={{ flex: '1 1 280px', maxWidth: '340px' }}>
+              <NewsCard item={news[0]} featured />
+            </div>
+
+            {/* 2×2 grid of smaller cards */}
+            <div
+              style={{
+                flex: '2 1 560px',
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '1rem',
+                alignItems: 'start',
+              }}
+            >
+              {news.slice(1).map((item) => (
+                <NewsCard key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginTop: '4rem', textAlign: 'right' }}>
+            <Link
+              to="/news"
+              style={{
+                fontSize: '0.875rem',
+                letterSpacing: '0.3em',
+                color: 'rgba(255,255,255,0.5)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
+              onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.5)')}
+            >
+              ALL NEWS →
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

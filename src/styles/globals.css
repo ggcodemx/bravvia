@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://use.typekit.net/pvv7rhy.css');
+
+:root {
+  --primary: #ffe600;
+  --bg-dark: #000000;
+  --white: #ffffff;
+  --white-60: rgba(255,255,255,0.6);
+  --white-30: rgba(255,255,255,0.3);
+  --white-10: rgba(255,255,255,0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: none;
+  overflow-x: hidden;
+  background-color: var(--bg-dark);
+  color: var(--white);
+  font-family: 'polymath', 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: rgba(255, 230, 0, 0.4);
+}
+
+/* ─── Custom Cursor ─────────────────────────────────── */
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  background: rgba(250, 230, 0, 1);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease,
+    background 0.3s ease, border 0.3s ease;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor.cursor-hover {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Grain Overlay ─────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 60;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+}
+
+/* ─── Reveal Animation ──────────────────────────────── */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes slowZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.visual-zoom {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+.floating-shape {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ─── Utility Classes ───────────────────────────────── */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.glass-morphism {
+  background: rgba(250, 230, 0, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-texture {
+  background-image: radial-gradient(circle at 50% 50%, rgba(250, 230, 0, 0.05) 0%, transparent 70%);
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image {
+  transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* ─── Click Bubble ──────────────────────────────────── */
+.click-bubble {
+  pointer-events: none;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: white;
+  font-weight: 700;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 40;
+}
+
+.intel-card:hover .click-bubble {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.intel-card:hover img {
+  filter: blur(4px) brightness(0.6);
+  transform: scale(1.05);
+}
+
+.intel-card img {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}

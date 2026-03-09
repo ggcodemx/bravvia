@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-
 
 import './styles/globals.css';
 import { useCustomCursor } from './hooks/useCustomCursor';

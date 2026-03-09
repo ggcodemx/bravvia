@@ -75,7 +75,7 @@ export default function ContactPage() {
         >
           {/* World clocks */}
           <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '-0.01em' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '-0.01em' }}>
               Our locations
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
@@ -88,12 +88,12 @@ export default function ContactPage() {
           {/* Direct contact */}
           <div
             className="reveal"
-            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '6rem', animationDelay: '0.2s' }}
+            style={{ display: 'flex', flexDirection: 'column',  gap: '1rem', animationDelay: '0.2s' }}
           >
             <div>
               <p
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: '1rem',
                   color: 'rgba(255,255,255,0.3)',
                   marginBottom: '3rem',
                 }}
@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <div key={label}>
                   <p
                     style={{
-                      fontSize: '0.75rem',
+                      fontSize: '1rem',
                       color: 'rgba(255,255,255,0.3)',
                       marginBottom: '1.5rem',
                     }}
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   <a
                     href={href}
                     style={{
-                      fontSize: '0.875rem',
+                      fontSize: '1rem',
                       color: 'white',
                       textDecoration: 'none',
                       transition: 'color 0.2s',

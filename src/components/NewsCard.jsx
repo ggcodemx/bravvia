@@ -69,7 +69,7 @@ export default function NewsCard({ item, featured = false }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         <h3
           style={{
-            fontSize: '1.125rem',
+            fontSize: '1.5rem',
             lineHeight: 1.3,
             letterSpacing: '-0.02em',
             color: 'white',
@@ -78,7 +78,7 @@ export default function NewsCard({ item, featured = false }) {
         >
           {item.title}
         </h3>
-        <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: '24rem' }}>
+        <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: '24rem' }}>
           {item.excerpt}
         </p>
       </div>

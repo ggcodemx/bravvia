@@ -17,7 +17,7 @@ export default function WorkPage() {
   return (
     <main style={{ paddingTop: '15rem', paddingBottom: '8rem' }}>
       {/* Page heading */}
-      <section style={{ padding: '0 2rem', marginBottom: '10rem' }}>
+      <section style={{ padding: '0 12rem', marginBottom: '10rem' }}>
         <h2
           className="reveal"
           style={{
@@ -34,7 +34,7 @@ export default function WorkPage() {
       </section>
 
       {/* Projects */}
-      <section style={{ padding: '0 2rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+      <section style={{ padding: '0 12rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
         {/* Full-width row */}
         <div className="reveal">
           <ProjectCard project={projects[0]} aspect="21/9" />

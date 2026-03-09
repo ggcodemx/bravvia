@@ -67,13 +67,13 @@ export default function AboutPage() {
           padding: '8rem 2rem 4rem',
         }}
       >
-        <div style={{ maxWidth: '90rem', margin: '0 auto', width: '100%' }}>
+        <div style={{ margin: '0 12rem', width: '75%' }}>
           <p
             className="reveal"
             style={{
-              fontSize: '0.875rem',
+              fontSize: '1.5rem',
               fontWeight: 500,
-              letterSpacing: '-0.02em',
+
               marginBottom: '3rem',
             }}
           >
@@ -85,7 +85,6 @@ export default function AboutPage() {
               fontSize: 'clamp(1.75rem, 5vw, 3.75rem)',
               fontWeight: 300,
               lineHeight: 1.05,
-              letterSpacing: '-0.04em',
               animationDelay: '0.2s',
             }}
           >
@@ -142,20 +141,19 @@ export default function AboutPage() {
                 <div style={{ paddingBottom: '2rem' }}>
                   <h2
                     style={{
-                      fontSize: '1.125rem',
+                      fontSize: '1.7rem',
                       fontWeight: 500,
                       letterSpacing: '-0.02em',
-                      textTransform: 'uppercase',
                       marginBottom: '0.75rem',
                     }}
                   >
                     {title}
                   </h2>
-                  <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+                  <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
                     {text}
                   </p>
                 </div>
-                <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
+                <div style={{ width: '100%', height: '1px', background: 'white' }} />
               </div>
             ))}
           </div>
@@ -168,7 +166,7 @@ export default function AboutPage() {
           <h2
             className="reveal"
             style={{
-              fontSize: '1.125rem',
+              fontSize: '1.5rem',
               fontWeight: 500,
               letterSpacing: '-0.02em',
               marginBottom: '4rem',

@@ -4,6 +4,7 @@ import { useReveal } from '../hooks/useReveal';
 import ProjectCard from '../components/ProjectCard';
 import NewsCard from '../components/NewsCard';
 import { projects, news } from '../data';
+import videoFondo from '../media/fondo.mp4';
 
 /**
  * HomePage
@@ -44,7 +45,7 @@ export default function HomePage() {
             zIndex: 0,
           }}
         >
-          <source src="/fondo.mp4" type="video/mp4" />
+          <source src={videoFondo} type="video/mp4" />
         </video>
 
         {/* Overlay */}
@@ -92,7 +93,7 @@ export default function HomePage() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
-            maxWidth: '90rem',
+           
             margin: '0 auto',
           }}
         >
@@ -219,7 +220,7 @@ export default function HomePage() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
             {/* Featured card */}
-            <div style={{ flex: '1 1 280px', maxWidth: '340px' }}>
+            <div style={{ flex: '1 1 280px', maxWidth: '540px' }}>
               <NewsCard item={news[0]} featured />
             </div>
 
@@ -243,8 +244,7 @@ export default function HomePage() {
             <Link
               to="/news"
               style={{
-                fontSize: '0.875rem',
-                letterSpacing: '0.3em',
+                fontSize: '1rem',
                 color: 'rgba(255,255,255,0.5)',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
@@ -252,7 +252,7 @@ export default function HomePage() {
               onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
               onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.5)')}
             >
-              ALL NEWS →
+              All news →
             </Link>
           </div>
         </div>

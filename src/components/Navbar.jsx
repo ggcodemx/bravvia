@@ -37,9 +37,9 @@ export default function Navbar() {
         <span
           style={{
             display: 'none',
-            fontSize: '1.5rem',
+            fontSize: '2.5rem',
             fontWeight: 300,
-            letterSpacing: '-0.04em',
+            textDecorationStyle:'none',
             color: 'white',
           }}
         >
@@ -48,14 +48,13 @@ export default function Navbar() {
       </Link>
 
       {/* Links */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
         {navLinks.map(({ label, to }) => (
           <Link
             key={to}
             to={to}
             style={{
-              fontSize: '0.875rem',
-              letterSpacing: '0.3em',
+              fontSize: '1.4rem',
               color: pathname === to ? 'var(--primary)' : 'white',
               textDecoration: 'none',
               transition: 'color 0.2s',

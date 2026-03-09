@@ -71,7 +71,7 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
           <div>
             <h2
               style={{
-                fontSize: '1.5rem',
+                fontSize: '2rem',
                 fontWeight: 300,
                 letterSpacing: '-0.04em',
                 lineHeight: 1,
@@ -81,12 +81,12 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
             >
               {project.title}
             </h2>
-            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)' }}>
               {project.category}
             </p>
           </div>
           {project.year && (
-            <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>
+            <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)' }}>
               {project.year}
             </span>
           )}

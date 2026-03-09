@@ -14,7 +14,6 @@ const footerSections = [
     links: [
       { label: 'Work',    to: '/work' },
       { label: 'News',    to: '/news' },
-      { label: 'Cookies', to: '/cookies' },
     ],
   },
 ];
@@ -73,7 +72,7 @@ export default function Footer() {
         {/* Content */}
         <div
           style={{
-            maxWidth: '80rem',
+            maxWidth: '90rem',
             margin: '0 auto',
             position: 'relative',
             zIndex: 10,
@@ -91,9 +90,9 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <p
                 style={{
-                  fontSize: '0.875rem',
+                  fontSize: '1rem',
                   color: 'white',
-                  letterSpacing: '0.1em',
+  
                   maxWidth: 250,
                   lineHeight: 1.8,
                 }}
@@ -108,28 +107,27 @@ export default function Footer() {
               <div key={heading} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <h4
                   style={{
-                    fontSize: '0.625rem',
-                    letterSpacing: '0.5em',
+                    fontSize: '1.2rem',
                     color: 'var(--primary)',
-                    textTransform: 'uppercase',
+                  
                   }}
                 >
                   {heading}
                 </h4>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {links.map(({ label, to }) => (
                     <li key={label}>
                       <Link
                         to={to}
                         style={{
-                          fontSize: '0.875rem',
-                          color: 'rgba(255,255,255,0.6)',
+                          fontSize: '1rem',
+                          color: 'white',
                           letterSpacing: '0.1em',
                           textDecoration: 'none',
                           transition: 'color 0.2s',
                         }}
                         onMouseEnter={(e) => (e.target.style.color = 'white')}
-                        onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
+                       
                       >
                         {label}
                       </Link>
@@ -140,13 +138,13 @@ export default function Footer() {
             ))}
 
             {/* Contact */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
               <h4
                 style={{
-                  fontSize: '0.625rem',
-                  letterSpacing: '0.5em',
+                  fontSize: '1.2rem',
+
                   color: 'var(--primary)',
-                  textTransform: 'uppercase',
+                
                 }}
               >
                 Initiate
@@ -157,9 +155,8 @@ export default function Footer() {
                   fontSize: '1.5rem',
                   fontWeight: 300,
                   color: 'white',
-                  textDecoration: 'underline',
-                  textDecorationColor: 'rgba(255,255,255,0.1)',
-                  textUnderlineOffset: '0.5rem',
+                  textDecoration: 'none',
+                  
                   transition: 'color 0.2s',
                 }}
                 onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
@@ -167,7 +164,7 @@ export default function Footer() {
               >
                 hello@bravvia.agency
               </a>
-              <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.75rem' }}>
+              <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.9rem' }}>
                 {['LinkedIn', 'Instagram'].map((s) => (
                   <a
                     key={s}
@@ -196,6 +193,7 @@ export default function Footer() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+         
         }}
       >
         <Link
@@ -208,8 +206,8 @@ export default function Footer() {
               fontSize: '16vw',
               color: 'black',
               lineHeight: 1,
-              letterSpacing: '-0.04em',
               transition: 'letter-spacing 0.7s',
+               fontWeight: 400,
             }}
             onMouseEnter={(e) => (e.target.style.letterSpacing = '0')}
             onMouseLeave={(e) => (e.target.style.letterSpacing = '-0.04em')}

@@ -171,7 +171,7 @@ export default function Footer() {
                 {['LinkedIn', 'Instagram'].map((s) => (
                   <a
                     key={s}
-                    href="#"
+                    href="/"
                     style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
                     onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}

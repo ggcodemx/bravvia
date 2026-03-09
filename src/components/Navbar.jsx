@@ -24,7 +24,7 @@ export default function Navbar() {
       }}
     >
       {/* Logo */}
-      <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+      <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <img
           src="/Bravvia_logotipo_blanco.png"
           alt="Bravvia - branding agency"

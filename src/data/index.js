@@ -9,7 +9,7 @@ export const projects = [
     description:
       'A multi-sensory branding experience for the next generation of architectural studios. Defined by brutalist minimalism and light-leak aesthetics.',
     type: 'Brand',
-    link: '/work/sois',
+    link: '/work/:slug',
   },
   {
     id: 'waves',

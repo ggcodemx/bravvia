@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <main
+      <main className='hero-section'
         style={{
           position: 'relative',
           minHeight: '100vh',
@@ -135,47 +135,35 @@ export default function HomePage() {
             return (
               <div
                 key={project.id}
-                className="reveal"
+                className={`reveal project-row ${isEven ? 'even' : 'odd'}`}
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(12, 1fr)',
-                  gap: '3rem',
                   alignItems: 'center',
                 }}
               >
                 {/* Text */}
-                <div
-                  style={{
-                    gridColumn: isEven ? '1 / 5' : '8 / 13',
-                    gridRow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1.5rem',
-                    order: isEven ? 1 : 2,
-                  }}
+                <div className='project-grid-item'
+                
                 >
-                  <h2
+                  <h2 className='project-title'
                     style={{
                       fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
                       fontWeight: 300,
-                      letterSpacing: '-0.04em',
                       lineHeight: 1,
                     }}
                   >
                     {project.title}
                   </h2>
-                  <h3
+                  <h3 className='project-brand'
                     style={{
                       fontSize: '1.25rem',
                       color: 'rgba(255,255,255,0.5)',
                       fontWeight: 300,
-                      letterSpacing: '-0.03em',
                       lineHeight: 1,
                     }}
                   >
                     {project.type}
                   </h3>
-                  <p
+                  <p className='project-text'
                     style={{
                       color: 'white',
                       lineHeight: 1.7,
@@ -188,12 +176,8 @@ export default function HomePage() {
                 </div>
 
                 {/* Image */}
-                <div
-                  style={{
-                    gridColumn: isEven ? '5 / 13' : '1 / 8',
-                    gridRow: 1,
-                    order: isEven ? 2 : 1,
-                  }}
+                <div className='project-img'
+                 
                 >
                   <ProjectCard project={project} aspect="16/10" showMeta={false} />
                 </div>

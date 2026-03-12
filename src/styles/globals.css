@@ -162,3 +162,42 @@ body {
 .intel-card img {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media (max-width: 768px) {
+  .main-nav {
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  .hero-section {
+    margin-top: calc(-1 * var(--nav-height, 15rem));
+    z-index: 0 !important;
+  }
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.project-grid-item { display: flex; flex-direction: column; gap: 1.5rem; grid-row: 1; }
+.project-img { grid-row: 1; }
+
+.even .project-grid-item { grid-column: 1 / 5;  order: 1; }
+.even .project-img       { grid-column: 5 / 13; order: 2; }
+
+.odd .project-grid-item  { grid-column: 8 / 13; order: 2; }
+.odd .project-img        { grid-column: 1 / 8;  order: 1; }
+
+/* Móvil */
+@media (max-width: 768px) {
+  .project-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-img        { order: 1; }
+  .project-grid-item  { order: 2; }
+}

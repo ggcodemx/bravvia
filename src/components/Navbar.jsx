@@ -10,7 +10,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <nav
+    <nav className='main-nav'
       style={{
         position: 'fixed',
         top: 0,
@@ -20,7 +20,7 @@ export default function Navbar() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        mixBlendMode: 'difference',
+         color: '#ffffff'
       }}
     >
       {/* Logo */}

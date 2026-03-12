@@ -254,7 +254,7 @@ export default function NewsPage() {
       {/* ── Grid ── */}
       <section style={{ padding: '6rem 2rem', background: '#000' }}>
         <div style={{  margin: '0 12rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))', gap: '4rem 2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '4rem 2.5rem' }}>
             {visibleArticles.map((article) => (
               <NewsCard key={article.id} article={article} />
             ))}

@@ -1,5 +1,5 @@
-import React, {  useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 
 import './styles/globals.css';
 import { useCustomCursor } from './hooks/useCustomCursor';
@@ -11,7 +11,9 @@ import HomePage    from './pages/HomePage';
 import WorkPage    from './pages/WorkPage';
 import AboutPage   from './pages/AboutPage';
 import NewsPage    from './pages/NewsPage';
-import ContactPage from './pages/ContactPage';
+import ContactPage  from './pages/ContactPage';
+import BlogPostPage  from './pages/Blogpostpage';
+import ProjectDetailPage from './pages/Projectdetailpage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,8 +49,10 @@ export default function App() {
         <Route path="/work"    element={<WorkPage />} />
         <Route path="/about"   element={<AboutPage />} />
         <Route path="/news"    element={<NewsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="*"        element={<HomePage />} />
+        <Route path="/contact"    element={<ContactPage />} />
+        <Route path="/blog/:slug"  element={<BlogPostPage />} />
+        <Route path="/work/:slug"  element={<ProjectDetailPage />} />
+        <Route path="*"           element={<HomePage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

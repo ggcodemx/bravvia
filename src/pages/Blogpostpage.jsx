@@ -553,7 +553,7 @@ export default function BlogPostPage() {
                     {POST.tags.map((tag) => (
                       <a
                         key={tag}
-                        href="#"
+                        href="/"
                         style={{ textDecoration: 'none', color: 'inherit', transition: 'color 0.2s' }}
                         onMouseEnter={(e) => (e.target.style.color = 'white')}
                         onMouseLeave={(e) => (e.target.style.color = 'rgba(204,204,204,0.6)')}

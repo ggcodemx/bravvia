@@ -56,15 +56,15 @@ export const projects = [
     link: '/work/integral-spaces',
   },
   {
-    id: 'cortez-berlanga',
-    title: 'Cortez Berlanga',
+    id: 'ways-and-ways',
+    title: 'Ways & Ways',
     category: 'Packaging',
     year: '2024',
     image: '2.gif',
     description:
       'A refined legal identity built on precision and authority. Typography-first branding for a premier law firm.',
     type: 'Brand',
-    link: '/work/cortez-berlanga',
+    link: '/work/ways-and-ways',
   },
 ];
 

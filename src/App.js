@@ -27,7 +27,8 @@ function ResponsiveCursor() {
   useEffect(() => {
     const el = cursorRef.current;
     if (!el) return;
-    const mq = window.matchMedia('(min-width: 768px)');
+    //const mq = window.matchMedia('(min-width: 768px)');
+    const mq = window.matchMedia('(pointer: fine)');
     const update = (e) => { el.style.display = e.matches ? 'block' : 'none'; };
     update(mq);
     mq.addEventListener('change', update);

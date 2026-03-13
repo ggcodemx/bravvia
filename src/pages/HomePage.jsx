@@ -29,6 +29,7 @@ export default function HomePage() {
           justifyContent: 'center',
           overflow: 'hidden',
           paddingTop: '5rem',
+          
         }}
       >
         <video
@@ -86,7 +87,7 @@ export default function HomePage() {
           position: 'relative',
           zIndex: 30,
           background: 'var(--bg-dark)',
-          padding: '10rem 2rem',
+          padding: '2rem 2rem',
         }}
       >
         <div
@@ -127,7 +128,7 @@ export default function HomePage() {
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: '16rem',
+            gap: '10rem',
           }}
         >
           {projects.map((project, i) => {

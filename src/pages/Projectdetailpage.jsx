@@ -190,7 +190,7 @@ export default function ProjectDetailPage() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section
+      <section className='hero-section'
         style={{
           position: 'relative',
           height: '100vh',
@@ -228,7 +228,7 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Meta grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2.5rem' }}>
+          <div className='meta-project' >
             {project.meta.map(({ label, value }) => (
               <div key={label}>
                 <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1rem', marginBottom: '0.75rem' }}>

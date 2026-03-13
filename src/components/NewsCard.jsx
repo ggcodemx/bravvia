@@ -34,7 +34,7 @@ export default function NewsCard({ item, featured = false }) {
         style={{
           position: 'relative',
           overflow: 'hidden',
-          aspectRatio: featured ? '4/5' : '16/9',
+          aspectRatio: featured ? '4/5' : '16/10',
           background: '#18181b',
           marginBottom: '1.5rem',
         }}
@@ -67,9 +67,9 @@ export default function NewsCard({ item, featured = false }) {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-        <h3
+        <h3 className='news-title-home'
           style={{
-            fontSize: '1.5rem',
+            
             lineHeight: 1.3,
             letterSpacing: '-0.02em',
             color: 'white',

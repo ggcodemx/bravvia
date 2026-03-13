@@ -81,7 +81,7 @@ export default function Footer() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
               gap: '3rem',
               marginBottom: '10rem',
             }}
@@ -165,7 +165,7 @@ export default function Footer() {
                 hello@bravvia.agency
               </a>
               <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.9rem' }}>
-                {['LinkedIn', 'Instagram'].map((s) => (
+                {['LinkedIn', 'Instagram', 'Privacy policy'].map((s) => (
                   <a
                     key={s}
                     href="/"
@@ -183,13 +183,12 @@ export default function Footer() {
       </footer>
 
       {/* ── Big yellow sign ── */}
-      <div
+      <div className='logo-yellow'
         style={{
           background: 'var(--primary)',
           position: 'sticky',
           top: 0,
           zIndex: 10,
-          height: '50vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

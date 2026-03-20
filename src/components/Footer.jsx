@@ -109,6 +109,7 @@ export default function Footer() {
                   style={{
                     fontSize: '1.2rem',
                     color: 'var(--primary)',
+                    fontWeight: 400,
                   
                   }}
                 >
@@ -142,7 +143,7 @@ export default function Footer() {
               <h4
                 style={{
                   fontSize: '1.2rem',
-
+                  fontWeight: 400,
                   color: 'var(--primary)',
                 
                 }}

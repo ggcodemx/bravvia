@@ -72,7 +72,7 @@ export const projects = [
 export const news = [
   {
     id: 1,
-    date: '12.02.26',
+    date: '22.04.26',
     title: 'The waiting game',
     excerpt:
       "Why brand indecision is itself a brand decision, and what the market reads when a company stays silent.",
@@ -82,42 +82,52 @@ export const news = [
   },
   {
     id: 2,
-    date: '11.02.26',
-    title: "It's Nice That | POV",
+    date: '18.04.26',
+    title: 'The brands nobody notices and everybody remembers',
     excerpt:
-      "Cat features in Transform Magazine's Valentines-themed discussion on brands that we've loved from day dot.",
+      "On the difference between visibility and recognition, and why the second one builds lasting value.",
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuD9QqMGr4SzLE_KP5wxUd76fPZjW81wPXnW5k6-mC3JxP7pjqvGLqps9YREgz3x2QZzJLTmBjzeQatwj3lp5oHtH9dt9nwX9rfyfAMbqgSsIlQw3XMq1eyN1mBQyIZscqxvzcKeaZeIOKUWhagNr3f9DQFpwEuEO9Frtq9b3WI_WM-VbxJpUOPgbpBfj7Lt64_aGSdtHV2_ulBo0EIMoX22c0xMkoTbXNFNet_XHmNscbPVzrfCCVM33bEek2RD95NL3vslEXGqiqqS',
     featured: false,
   },
   {
     id: 3,
-    date: '10.02.26',
-    title: "Cat Judges For Campaign's 40 Over 40",
+    date: '12.04.26',
+    title: 'The most dangerous brand strategy is the one that works for everyone',
     excerpt:
-      "Cat features in Transform Magazine's Valentines-themed discussion on brands that we've loved from day dot.",
+      "When a brand tries to offend nobody, it ends up meaning nothing. On the cost of building without a position.",
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAD85ACgcfK5RFPj19dnzxz0oEVucXTRoq4MXzLex2Vj8Ujz4E57jt4-teStuCYV-rBAYk-sluEWA-Oa12D-SEzy_jCsH5DJ_QmsabRL1To0ygVM2bgOlARuyM9b5KBgaqlin2ifyF0LLeh9ZihgRTfo1kZ-WtUDB5DW9HebAxX3Fh6p5rdVfVyyCZ7lydUKiuT0CmwAnfuB90mkZnQyILSu8m_gh2bnKteOZeOdeoUh1P37-T3kbpH9dbRr3FJd-RPtl3mSH2iA_Va',
     featured: false,
   },
   {
     id: 4,
-    date: '01.02.26',
-    title: 'Cat Judging @ Applied Arts Awards 2026',
+    date: '05.04.26',
+    title: 'Typography is governance',
     excerpt:
-      "Cat features in Transform Magazine's Valentines-themed discussion on brands that we've loved from day dot.",
+      "How type systems quietly enforce brand discipline long after the guidelines deck is forgotten.",
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCw8sluinxjcSc1OnIH5RIdWaGh_oVdh_4gL92IQY5M1u7xCKbInLVgtKk3gM6uQViyl81FM8ilCrVuwE7sqD83l9QR5IKD_1I6yuibrQWqUoaV33T268s06GC1L6YnDrxKzH-FlBlfDdgQAZ6PUvxoJOiIhbOr5n3CURlFIOI8zepoYqqNZe2QUzlJPYcpDu3RE41_aLr-QSIY5hNaHPQGnUAA3FtmgCdvmO5WjtNzADQiQNrOLni1j4GfAwzqHVFWGt4QnIYi7zIq',
     featured: false,
   },
   {
     id: 5,
-    date: '25.01.26',
-    title: 'MAD TIMES | When Brands Act and Creatives Dare',
+    date: '28.03.26',
+    title: 'Present tense brands in a future tense market',
     excerpt:
-      "Cat features in Transform Magazine's Valentines-themed discussion on brands that we've loved from day dot.",
+      "Most companies narrate where they are going. The strongest ones articulate where they stand right now.",
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuD9QqMGr4SzLE_KP5wxUd76fPZjW81wPXnW5k6-mC3JxP7pjqvGLqps9YREgz3x2QZzJLTmBjzeQatwj3lp5oHtH9dt9nwX9rfyfAMbqgSsIlQw3XMq1eyN1mBQyIZscqxvzcKeaZeIOKUWhagNr3f9DQFpwEuEO9Frtq9b3WI_WM-VbxJpUOPgbpBfj7Lt64_aGSdtHV2_ulBo0EIMoX22c0xMkoTbXNFNet_XHmNscbPVzrfCCVM33bEek2RD95NL3vslEXGqiqqS',
+    featured: false,
+  },
+  {
+    id: 6,
+    date: '15.03.26',
+    title: 'The brand gap between founders and markets',
+    excerpt:
+      "What happens when a company's internal conviction and its external perception stop matching, and how to close the distance.",
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAD85ACgcfK5RFPj19dnzxz0oEVucXTRoq4MXzLex2Vj8Ujz4E57jt4-teStuCYV-rBAYk-sluEWA-Oa12D-SEzy_jCsH5DJ_QmsabRL1To0ygVM2bgOlARuyM9b5KBgaqlin2ifyF0LLeh9ZihgRTfo1kZ-WtUDB5DW9HebAxX3Fh6p5rdVfVyyCZ7lydUKiuT0CmwAnfuB90mkZnQyILSu8m_gh2bnKteOZeOdeoUh1P37-T3kbpH9dbRr3FJd-RPtl3mSH2iA_Va',
     featured: false,
   },
 ];

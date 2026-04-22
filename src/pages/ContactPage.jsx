@@ -28,9 +28,7 @@ export default function ContactPage() {
               lineHeight: 1,
             }}
           >
-            Beyond boundaries.
-            <br />
-            Beyond branding.
+           The work starts here.
           </h2>
         </div>
       </section>
@@ -75,8 +73,8 @@ export default function ContactPage() {
         >
           {/* World clocks */}
           <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '-0.01em' }}>
-              Our locations
+            <p style={{ fontSize: '1rem' }}>
+              Serving clients across time zones
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {offices.map((office) => (
@@ -94,7 +92,7 @@ export default function ContactPage() {
               <p
                 style={{
                   fontSize: '1rem',
-                  color: 'rgba(255,255,255,0.3)',
+                  
                   marginBottom: '3rem',
                 }}
               >

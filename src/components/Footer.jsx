@@ -97,8 +97,7 @@ export default function Footer() {
                   lineHeight: 1.8,
                 }}
               >
-                Brand strategy and identity for companies that know who they are
-                and those still figuring it out.
+               Brand strategy and identity for companies ready to take a position. Built for the brave.
               </p>
             </div>
 

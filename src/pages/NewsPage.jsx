@@ -244,9 +244,7 @@ export default function NewsPage() {
             className="reveal"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', fontWeight: 300, letterSpacing: '-0.05em', lineHeight: 1 }}
           >
-            Featured insights and
-            <br />
-            global movements.
+            Perspectives from the practice.
           </h2>
         </div>
       </section>

@@ -73,9 +73,9 @@ export const news = [
   {
     id: 1,
     date: '12.02.26',
-    title: 'Transform Magazine | The Brands We\'ve Always Loved',
+    title: 'The waiting game',
     excerpt:
-      "Cat features in Transform Magazine's Valentines-themed discussion on brands that we've loved from day dot.",
+      "Why brand indecision is itself a brand decision, and what the market reads when a company stays silent.",
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCw8sluinxjcSc1OnIH5RIdWaGh_oVdh_4gL92IQY5M1u7xCKbInLVgtKk3gM6uQViyl81FM8ilCrVuwE7sqD83l9QR5IKD_1I6yuibrQWqUoaV33T268s06GC1L6YnDrxKzH-FlBlfDdgQAZ6PUvxoJOiIhbOr5n3CURlFIOI8zepoYqqNZe2QUzlJPYcpDu3RE41_aLr-QSIY5hNaHPQGnUAA3FtmgCdvmO5WjtNzADQiQNrOLni1j4GfAwzqHVFWGt4QnIYi7zIq',
     featured: true,
@@ -133,7 +133,7 @@ export const navLinks = [
 // ─── World clocks ───────────────────────────────────────────────────────────
 export const offices = [
   { city: 'London',      timezone: 'Europe/London',    subtitle: 'United Kingdom / GMT+0' },
-  { city: 'Mexico City', timezone: 'America/Mexico_City', subtitle: 'Mexico / CST' },
+  { city: 'Where we work (Mexico City)', timezone: 'America/Mexico_City', subtitle: 'Mexico / CST' },
   { city: 'China',       timezone: 'Asia/Shanghai',    subtitle: 'China / CST (UTC+8)' },
   { city: 'New York',    timezone: 'America/New_York',  subtitle: 'United States / EST' },
 ];

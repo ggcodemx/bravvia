@@ -76,7 +76,7 @@ export default function HomePage() {
               lineHeight: 1,
             }}
           >
-            Make it a brand.
+            Built by the brave. Built for the brave.
           </h2>
         </div>
       </main>
@@ -88,6 +88,7 @@ export default function HomePage() {
           zIndex: 30,
           background: 'var(--bg-dark)',
           padding: '2rem 2rem',
+          maxWidth: '72rem',
         }}
       >
         <div
@@ -101,14 +102,13 @@ export default function HomePage() {
           <h2
             className="reveal"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
               fontWeight: 300,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,
             }}
           >
-            We are an independent brand consultancy. We build
-            <br /> what it stands for, how it speaks, and why it matters.
+            We are an independent brand consultancy.  Our work is built for the companies that move first, define their own terms, and know that brand is the bridge between how a business thinks and how the world receives it.
           </h2>
         </div>
       </section>

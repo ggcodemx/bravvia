@@ -142,8 +142,8 @@ export const navLinks = [
 
 // ─── World clocks ───────────────────────────────────────────────────────────
 export const offices = [
-  { city: 'London',      timezone: 'Europe/London',    subtitle: 'United Kingdom / GMT+0' },
   { city: 'Where we work (Mexico City)', timezone: 'America/Mexico_City', subtitle: 'Mexico / CST' },
   { city: 'China',       timezone: 'Asia/Shanghai',    subtitle: 'China / CST (UTC+8)' },
+  { city: 'London',      timezone: 'Europe/London',    subtitle: 'United Kingdom / GMT+0' },
   { city: 'New York',    timezone: 'America/New_York',  subtitle: 'United States / EST' },
 ];

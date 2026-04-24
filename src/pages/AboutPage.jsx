@@ -87,9 +87,11 @@ export default function AboutPage() {
       <section style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '8rem 2rem 4rem' }}>
         <div style={{ margin: '0 12rem', width: '75%' }}>
           <p className="reveal" style={{ fontSize: '1.5rem', fontWeight: 500, marginBottom: '3rem' }}>Our philosophy</p>
-          <p className="reveal" style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)', fontWeight: 300, lineHeight: 1.05, animationDelay: '0.2s' }}>
-            We believe in radical clarity.<br />
-            At Bravvia, we deconstruct complexity to reveal the structural essence of a brand.
+          <p className="reveal" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)',  fontWeight: 300, lineHeight: 1.05, animationDelay: '0.2s', textAlign: 'justify' }}>
+            The courage to decide. The conviction to believe. The ambition to dream. 
+Bravvia is a brand consultancy built on creative closeness and the strategy to make it last. We work with companies ready to define who they are, and we make sure it holds.
+<br /> <br />Not for everyone. For the brave.
+
           </p>
         </div>
       </section>
@@ -131,14 +133,14 @@ export default function AboutPage() {
                       cursor: 'pointer' 
                     }}
                   >
-                    <h3 style={{ 
-                      fontSize: 'clamp(2rem, 6vw, 3.5rem)', 
+                    <h2 style={{ 
+                      fontSize: 'clamp(2rem, 6vw, 3rem)', 
                       fontWeight: 400, 
                       margin: 0, 
                     
                     }}>
                       {service.category}
-                    </h3>
+                    </h2>
                     
                     {/* Icono interactivo (+ / -) */}
                     <div style={{ 
@@ -216,16 +218,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── Pillars ── */}
-      <section style={{ padding: '8rem 2rem' }}>
+      <section style={{ padding: '0rem 2rem', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: '90rem', margin: '0 auto' }}>
-           <h2 className="reveal" style={{ fontSize: '1.5rem', fontWeight: 500,marginBottom: '6rem' }}>
-            Pillars
-          </h2>
+          <p className="reveal" style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.5 }}>
+            Our Pillars
+          </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '5rem' }}>
             {pillars.map(({ title, text, delay }) => (
               <div key={title} className="reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', animationDelay: delay }}>
                 <div style={{ paddingBottom: '2rem' }}>
-                  <h2 style={{ fontSize: '1.7rem', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>{title}</h2>
+                  <h2 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>{title}</h2>
                   <p style={{ textAlign: 'justify', fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{text}</p>
                 </div>
                 <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.2)' }} />

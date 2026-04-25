@@ -135,7 +135,7 @@ function NextProject({ project }) {
   return (
     <Link
       to={`/work/${project.slug}`}
-      style={{ position: 'relative', height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', textDecoration: 'none', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+      style={{ position: 'relative', height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', textDecoration: 'none' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -245,10 +245,11 @@ export default function ProjectDetailPage() {
 
       {/* ── Challenge / Strategy ── */}
       <section style={{ padding: '8rem 3rem' }}>
-        <div style={{ maxWidth: '80rem', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '6rem' }}>
+
           <TextBlock heading="The Challenge" body={project.challenge} />
+          <br /> <br />
           <TextBlock heading="The Strategy" body={project.strategy} delay="0.2s" />
-        </div>
+        
       </section>
 
       {/* ── Cinematic images ── */}
@@ -262,7 +263,7 @@ export default function ProjectDetailPage() {
         <div style={{ padding: '0 3rem' }}>
           <div style={{ maxWidth: '96rem', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
             {[project.cinematicImages[1], project.cinematicImages[2]].map((src, i) => (
-              <div key={i} className="reveal" style={{ animationDelay: `${i * 0.2}s`, aspectRatio: '16/9' }}>
+              <div key={i} className="reveal" style={{ animationDelay: `${i * 0.2}s`, aspectRatio: '3/4' }}>
                 <ParallaxImage src={src} alt={`Cinematic detail ${i + 2}`} style={{ width: '100%', height: '100%' }} />
               </div>
             ))}

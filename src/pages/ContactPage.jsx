@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useReveal } from '../hooks/useReveal';
 import WorldClock from '../components/WorldClock';
-import { offices } from '../data';
+
+import { globalOffices } from '../data';
 
 /**
  * ContactPage
@@ -73,15 +74,33 @@ export default function ContactPage() {
         >
           {/* World clocks */}
           <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            <p style={{ fontSize: '1rem' }}>
-              Serving clients across time zones
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-              {offices.map((office) => (
-                <WorldClock key={office.city} {...office} />
-              ))}
-            </div>
-          </div>
+  
+  {/* Sección: Oficina Principal */}
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <p style={{ fontSize: '1rem', color: 'white' }}>
+      Where we work
+    </p>
+    <WorldClock 
+      city="Mexico City" 
+      timezone="America/Mexico_City" 
+      subtitle="Main Office / CST" 
+    />
+  </div>
+
+  {/* Sección: Oficinas Globales */}
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <p style={{ fontSize: '1rem', fontWeight: '400' }}>
+      Serving clients across time zones
+    </p>
+    
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+      {globalOffices.map((office) => (
+        <WorldClock key={office.city} {...office} />
+      ))}
+    </div>
+  </div>
+
+</div>
 
           {/* Direct contact */}
           <div

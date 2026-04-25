@@ -88,7 +88,7 @@ export default function AboutPage() {
         <div style={{ margin: '0 12rem', width: '75%' }}>
           <p className="reveal" style={{ fontSize: '1.5rem', fontWeight: 500, marginBottom: '3rem' }}>Our philosophy</p>
           <p className="reveal" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)',  fontWeight: 300, lineHeight: 1.05, animationDelay: '0.2s', textAlign: 'justify' }}>
-            The courage to decide. The conviction to believe. The ambition to dream. 
+            The courage to decide. The conviction to believe. The ambition to dream. <br /><br />
 Bravvia is a brand consultancy built on creative closeness and the strategy to make it last. We work with companies ready to define who they are, and we make sure it holds.
 <br /> <br />Not for everyone. For the brave.
 
@@ -97,14 +97,14 @@ Bravvia is a brand consultancy built on creative closeness and the strategy to m
       </section>
 
       {/* ── Banner image ── */}
-      <section style={{ padding: '0 2rem', marginBottom: '8rem' }}>
+      <section style={{ padding: '0 2rem', marginBottom: '2rem' }}>
         <div className="reveal visual-zoom" style={{ aspectRatio: '21/9', width: '100%', overflow: 'hidden', background: '#111', filter: 'grayscale(1)' }}>
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbkvoZXaKrS-JTMco_8iMkkr7vX4vyHQlg2tuqvZYiabHBcsYAJ444m3Rl5xVa5WDTtePqn-KwFYvBpvacLprp1mfymlbDkUWogDQMCwzu2GO9CIIsVASvrlcmAij_5XFcvidzFtP1QkooTGqCj1sm3_qz7PJG701RUrMZO180vtVnlvWYXw0-mHNRn2POMUuDrxIbCsI_e2YClHsHR3vkLa77BQ_sDH1nrcV1ItPrhKPscw41uYLwvMKjhrKirPXmIo0FDbtSLHEw" alt="Architectural" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6 }} />
         </div>
       </section>
 
       {/* ── Services / Capabilities ── */}
-     <section style={{ padding: '8rem 2rem' }}>
+     <section style={{ padding: '4rem 2rem' }}>
         <div style={{ maxWidth: '90rem', margin: '0 auto' }}>
           <p className="reveal" style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.5 }}>
             Our Services

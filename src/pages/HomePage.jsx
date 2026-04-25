@@ -203,27 +203,19 @@ export default function HomePage() {
             Insights&nbsp;&nbsp;•&nbsp;&nbsp;News&nbsp;&nbsp;•&nbsp;&nbsp;Press
           </h2>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem' }}>
-            {/* Featured card */}
-            <div style={{ flex: '1 1 280px', maxWidth: '540px' }}>
-              <NewsCard item={news[0]} featured />
-            </div>
-
-            {/* 2×2 grid of smaller cards */}
-            <div
-              style={{
-                flex: '2 1 560px',
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '1rem',
-                alignItems: 'start',
-              }}
-            >
-              {news.slice(1).map((item) => (
-                <NewsCard key={item.id} item={item} />
-              ))}
-            </div>
-          </div>
+          <div 
+  style={{ 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(3, 1fr)', // Crea 3 columnas iguales
+    gap: '1.25rem' 
+  }}
+>
+  {news.slice(0, 6).map((item) => (
+    <div key={item.id} style={{ minWidth: 0 }}>
+      <NewsCard item={item} />
+    </div>
+  ))}
+</div>
 
           <div style={{ marginTop: '4rem', textAlign: 'right' }}>
             <Link

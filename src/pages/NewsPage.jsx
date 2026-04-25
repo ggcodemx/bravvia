@@ -238,7 +238,7 @@ export default function NewsPage() {
   return (
     <main>
       {/* ── Heading ── */}
-      <section style={{ padding: '8rem 2rem 3rem', borderBottom: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden' }}>
+      <section style={{ padding: '8rem 2rem 3rem', overflow: 'hidden' }}>
         <div style={{  margin: '0 12rem' }}>
           <h2
             className="reveal"
@@ -262,7 +262,7 @@ export default function NewsPage() {
 
       {/* ── Load more ── */}
       <section style={{ padding: '0 2rem 8rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3rem' }}>
-        <div style={{ width: '100%', maxWidth: '96rem', height: '1px', background: 'rgba(255,255,255,0.05)' }} />
+        
         {hasMore
           ? <LoadMoreButton onClick={() => setVisibleCount((c) => c + PAGE_SIZE)} />
           : <p style={{ fontSize: '0.75rem', letterSpacing: '0.3em', color: 'rgba(255,255,255,0.2)'}}>End of archive</p>

@@ -2,57 +2,77 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
 
+
 // ─── Data ─────────────────────────────────────────────────────────────────
 // In a real app esto vendría de una API o de props via react-router params
+// ─── Data ─────────────────────────────────────────────────────────────────
 const POST = {
-  number: '002',
-  location: 'London Archive',
-  title: ['The Geometry', 'of Pure Light'],
-  titleItalic: 'Pure', // la palabra que va en italic
-  readTime: '12 Min Read',
-  date: 'Oct 2024',
+  number: '003',
+  location: 'Strategic Archive',
+  title: ['The waiting', 'game.'], // Dividido para el diseño de dos líneas
+  titleItalic: 'game.', 
+  readTime: '8 Min Read',
+  date: 'APR 2026',
   contributor: { name: 'Julian V. Bravvia', code: '0x4F2A', role: 'Principal' },
-  tags: ['Architecture', 'Digital_Twin', 'Minimalism'],
+  tags: ['Strategy', 'Positioning', 'Market_Dynamics'],
   body: [
     {
       type: 'lead',
-      text: 'In the rapidly evolving landscape of visual identity, the intersection of architectural precision and digital fluidity has birthed a new paradigm. It is a space where light is not just a medium, but a structural component.',
-      highlight: 'architectural precision',
+      text: 'Why brand indecision is itself a brand decision, and what the market reads when a company stays silent.',
+      highlight: 'brand indecision',
     },
     {
       type: 'paragraph',
       offset: 'right',
-      text: 'The shift towards monochromatic digital environments is more than an aesthetic choice; it is a strategic response to the cognitive load of the modern era. By stripping away the extraneous, we allow the core architecture of information to breathe.',
-      italic: 'stripping away',
+      text: 'There is a particular kind of company that treats brand as something it will get to eventually. After the product is stable. After the first round of funding settles. Brand sits on the roadmap somewhere between "important" and "later," and later has a habit of never arriving.',
+      italic: 'never arriving',
     },
     {
-      type: 'image',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBS9WmcyaOskw6fkly_3_1JXi3SieY7k2e90GDFvDHVm8sbTEb0dPR1m_kQjq7h3snDyIsmJcN93kOApsbRaF1IgMAmQdDDjg18uhFSwbZxecR-bKVIsqmui7CdYKnscProB-HkQxGjIC2kW1SWQNGd3ucj_yv-8vZg2W-BCmGxFaOY4QgzM0o-OKkxTsae6-7y_quJhD0eUbnddCSwNd_Y87u8eFP6KWT8bca_AEr1a7YsVd2vv3ntQ0kg9O6Njpcaw0qu2q8kjQYZ',
-      caption: 'Detail — 002-A',
+      type: 'paragraph',
+      text: 'The assumption behind this delay is understandable. Building a brand feels like a commitment, and commitment feels premature when the business is still finding its shape. Why invest in a visual identity when the product might pivot? The logic is clean. The problem is that it ignores something fundamental about how markets work.',
+    },
+    {
+      type: 'quote',
+      text: '"Markets do not wait for companies to be ready. They assign meaning whether the company participates in that process or not."',
+      italic: 'participates',
+      attribution: '— Strategic Principle 01',
     },
     {
       type: 'paragraph',
       offset: 'left',
-      text: 'Digital structuralism demands a rigorous adherence to grid systems that mirror physical brutalism. Each element must justify its existence. When we look at the way iridescent 3D shapes interact with deep shadows, we see a reflection of how light behaves in a physical gallery—shifting, elusive.',
-      highlight: 'physical brutalism',
+      text: 'Every interaction a company has with the outside world, every pitch deck sent without a clear positioning, every website built on placeholder language—all of it accumulates into a perception. And that perception becomes the brand, whether it was designed or not.',
+      highlight: 'accumulates into a perception',
     },
     {
-      type: 'quote',
-      text: '"Intelligence is found in absolute, unyielding simplicity."',
-      italic: 'absolute',
-      attribution: '— The Bravvia Manifesto',
+      type: 'image',
+      src: 'news1.gif', // Usando la imagen de la lista de noticias
+      caption: 'Visualizing Market Vacuum — 003-B',
     },
     {
       type: 'paragraph',
-      text: 'As we look toward 2025, the visual standards for global industry will continue to favor these silent yet powerful systems. The "Bravvia Standard" is built on the belief that luxury is found in the gaps between the pixels—the moments of stillness that allow for deep resonance and clarity.',
-      highlight: 'gaps between the pixels',
+      text: 'The companies that understand this treat brand as an operational priority with the same weight as hiring or product development. A well-defined brand changes the physics of a business. Positioning does the heavy lifting before the first sales meeting. Remove brand from that equation and every function works harder to produce the same result.',
+    },
+    {
+      type: 'paragraph',
+      offset: 'right',
+      text: 'The longer a company operates without a defined brand, the more its internal culture fills the void. Teams develop their own language, their own visual shortcuts. The brand was never absent. It was just never governed.',
+      
+    },
+    {
+      type: 'quote',
+      text: '"The brave do not wait. They decide."',
+      italic: 'decide',
+      attribution: '— Bravvia Manifesto',
+    },
+    {
+      type: 'paragraph',
+      text: 'The waiting game is comfortable. It feels prudent. But every month a company operates without a clear brand, the market fills that vacuum with its own interpretation. And that interpretation is almost never the one the company would have chosen for itself.',
     },
   ],
   next: {
-    title: "Mexico City's Tech Corridor",
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCl7e8So22IJHdKVDclcdS1LRKUuxhWkjdD9WfmT_Yf2Z06X1mZf4Vpni7ehwOzj9A9BBuDsdgWaRvnOIwtQR54rBzEk_Ustm08TZMEZktu_pI7pAWBBUwWVX4o-y6u00AqlP95tgWp9RtdxH5YIeERx0uZhuOWUPHrrms-KeHD72NdarfDuqDcfGfRt82rGEhx_vlHowhukTYK4kg86_JnG9vaP_EPKPivXw-TBQ202avddh8vMyqepBPnZBWOTM-C5kLNsH0VTTej',
-    to: '/news',
+    title: "The brands nobody notices and everybody remembers.",
+    image: 'news2.gif',
+    to: '/news/visibility-vs-recognition-lasting-value',
   },
 };
 
@@ -140,7 +160,7 @@ function ArticleImage({ src, caption }) {
             fontSize: '0.5rem',
             color: 'rgba(255,255,255,0.4)',
             letterSpacing: '0.4em',
-            textTransform: 'uppercase',
+           
           }}
         >
           {caption}
@@ -221,7 +241,7 @@ function BodyBlock({ block }) {
                 fontSize: '0.75rem',
                 color: 'rgba(204,204,204,0.5)',
                 letterSpacing: '0.2em',
-                textTransform: 'uppercase',
+                
               }}
             >
               {block.attribution}
@@ -284,7 +304,7 @@ function NextArticle({ next }) {
             color: 'white',
             letterSpacing: '0.2em',
             marginBottom: '2rem',
-            textTransform: 'uppercase',
+           
           }}
         >
           Up next
@@ -354,7 +374,10 @@ function NextArticle({ next }) {
  *  - Sección "Next Article" con reveal de imagen al hover
  */
 export default function BlogPostPage() {
+  
   useReveal();
+
+ 
 
   useEffect(() => {
     document.title = `${POST.title.join(' ')} | Bravvia`;
@@ -444,7 +467,7 @@ export default function BlogPostPage() {
               gap: '1.5rem',
               fontSize: '0.625rem',
               letterSpacing: '0.2em',
-              textTransform: 'uppercase',
+            
               color: 'rgba(204,204,204,0.6)',
             }}
           >
@@ -475,7 +498,7 @@ export default function BlogPostPage() {
                 fontSize: '0.625rem',
                 color: 'rgba(204,204,204,0.5)',
                 letterSpacing: '0.2em',
-                textTransform: 'uppercase',
+               
               }}
             >
               {POST.readTime} • {POST.date}

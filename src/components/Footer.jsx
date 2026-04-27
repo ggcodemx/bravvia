@@ -18,6 +18,12 @@ const footerSections = [
   },
 ];
 
+const socialLinks = [
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/tu-perfil' },
+  { label: 'Instagram', url: 'https://instagram.com/tu-usuario' },
+  { label: 'Privacy policy', url: '/privacy' },
+];
+
 /**
  * Footer
  * Sticky footer with radial texture + the big yellow Bravvia sign below.
@@ -162,21 +168,27 @@ export default function Footer() {
                 onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
                 onMouseLeave={(e) => (e.target.style.color = 'white')}
               >
-                hello@bravvia.agency
+                hello@bravviaa.com
               </a>
               <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.9rem' }}>
-                {['LinkedIn', 'Instagram', 'Privacy policy'].map((s) => (
-                  <a
-                    key={s}
-                    href="/"
-                    style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
-                    onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
-                  >
-                    {s}
-                  </a>
-                ))}
-              </div>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ 
+                    color: 'rgba(255,255,255,0.6)', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s' 
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
+                  onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
+                >
+                  {link.label}
+                </a>
+  ))}
+</div>
             </div>
           </div>
         </div>

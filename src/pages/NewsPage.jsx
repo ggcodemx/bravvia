@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useReveal } from '../hooks/useReveal';
+import { Link } from 'react-router-dom';
 
 // ─── Data ──────────────────────────────────────────────────────────────────
 const ALL_ARTICLES = [
@@ -121,6 +122,10 @@ function NewsCard({ article }) {
   const [imgHovered, setImgHovered] = useState(false);
 
   return (
+    <Link 
+      to={`/news/${article.slug}`} 
+      style={{ textDecoration: 'none', color: 'inherit' }}
+    >
     <div className="reveal" style={{ display: 'flex', flexDirection: 'column', cursor: 'none' }}>
       {/* Image */}
       <div
@@ -184,6 +189,7 @@ function NewsCard({ article }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

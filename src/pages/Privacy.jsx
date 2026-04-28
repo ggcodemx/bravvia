@@ -330,11 +330,7 @@ To exercise any of these rights, please contact us at privacy@bravviaa.com. We w
           })}
         </div>
 
-        {/* Footer strip */}
-        <div className="pp-footer">
-          <span>© Bravvia 2026</span>
-          <span>privacy@bravviaa.com</span>
-        </div>
+      
       </div>
     </>
   );

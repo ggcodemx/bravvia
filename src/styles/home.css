@@ -1,0 +1,201 @@
+:root {
+  --side-padding: clamp(1.5rem, 10vw, 12rem);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.hero-tagline-container {
+  position: absolute;
+  bottom: 2.5rem;
+  left: var(--side-padding); /* Aplicando tu padding */
+  right: var(--side-padding);
+  z-index: 50;
+  mix-blend-mode: difference;
+}
+
+.hero-tagline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1;
+  margin: 0;
+  color: white;
+}
+
+/* --- Brand Statement --- */
+.brand-statement {
+  position: relative;
+  z-index: 30;
+  background: black;
+  padding: 8rem var(--side-padding); /* Padding solicitado */
+}
+
+.statement-container {
+  max-width: 72rem;
+}
+
+.statement-text {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+  color: white;
+}
+
+/* --- Projects Scroll --- */
+.projects-scroll {
+  position: relative;
+  z-index: 30;
+  background: black;
+  padding: 10rem var(--side-padding); /* Padding solicitado */
+}
+
+.projects-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.project-row {
+  display: flex;
+  flex-direction: column; /* Stacked por defecto en móvil */
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Desktop layout alternado */
+@media (min-width: 1024px) {
+  .project-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 8rem;
+  }
+  .project-row.odd {
+    flex-direction: row-reverse;
+  }
+  .project-info {
+    flex: 1;
+  }
+  .project-media {
+    flex: 1.5;
+  }
+}
+
+.project-title-text {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.project-brand-type {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.project-description-text {
+  color: white;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  max-width: 24rem;
+}
+
+.project-media {
+  width: 100%;
+}
+
+/* --- News Section --- */
+.home-news {
+  background: black;
+  padding: 6rem var(--side-padding) 10rem; /* Padding solicitado */
+  position: relative;
+  overflow: hidden;
+}
+
+.news-container {
+  max-width: 88rem;
+  margin: 0 auto;
+}
+
+.news-label {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.news-home-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 col móvil */
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .news-home-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cols tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-home-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cols desktop */
+  }
+}
+
+.news-footer {
+  margin-top: 4rem;
+  text-align: right;
+}
+
+.all-news-link {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.all-news-link:hover {
+  color: var(--primary);
+}
+
+/* --- Ajustes Móvil --- */
+@media (max-width: 768px) {
+  .projects-scroll {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .projects-container {
+    gap: 6rem;
+  }
+}

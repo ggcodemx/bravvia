@@ -401,7 +401,7 @@ body {
 /* --- Ajustes Móvil --- */
 @media (max-width: 768px) {
   .contact-hero { padding-top: 8rem; }
-  .contact-info-section { padding-bottom: 6rem; }
+  .contact-info-section { padding-bottom: 2rem; }
   .banner-frame { aspect-ratio: 16/9; }
 }
 

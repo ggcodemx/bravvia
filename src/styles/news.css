@@ -165,7 +165,7 @@
 
 /* --- Load More --- */
 .news-load-more {
-  padding: 0 var(--side-padding) 8rem;
+  padding: 0 var(--side-padding) 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;

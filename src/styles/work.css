@@ -1,7 +1,6 @@
 .work-page {
-  /* Mantenemos tus paddings originales como base */
   padding-top: 15rem;
-  padding-bottom: 8rem;
+  padding-bottom: 4rem;
   /* El padding lateral se adapta: 12rem en desktop, 1.5rem en móvil */
   padding-left: clamp(1.5rem, 10vw, 12rem);
   padding-right: clamp(1.5rem, 10vw, 12rem);

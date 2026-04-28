@@ -137,7 +137,7 @@
 /* --- News Section --- */
 .home-news {
   background: black;
-  padding: 6rem var(--side-padding) 10rem; /* Padding solicitado */
+  padding: 6rem var(--side-padding) 2rem; 
   position: relative;
   overflow: hidden;
 }
@@ -163,8 +163,9 @@
 
 @media (min-width: 768px) {
   .news-home-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cols tablet */
+    grid-template-columns: repeat(2, 1fr); 
   }
+
 }
 
 @media (min-width: 1024px) {

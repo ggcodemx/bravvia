@@ -293,7 +293,7 @@ To exercise any of these rights, please contact us at privacy@bravviaa.com. We w
           <div className="pp-hero-meta">
             <span className="pp-hero-date">Last updated: April 2026</span>
             <p className="pp-hero-desc">
-              Bravvia is an independent brand consultancy based in Mexico City, committed to protecting your privacy and handling your personal data with transparency.
+              Bravvia is an independent brand consultancy, committed to protecting your privacy and handling your personal data with transparency.
             </p>
           </div>
         </div>

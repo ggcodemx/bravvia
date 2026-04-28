@@ -150,6 +150,6 @@ export const globalOffices = [
   { city: 'London',    timezone: 'Europe/London',       subtitle: 'United Kingdom / GMT' },
   { city: 'New York',  timezone: 'America/New_York',    subtitle: 'United States / EST' },
   { city: 'Spain',    timezone: 'Europe/Madrid',       subtitle: 'Spain / CET' },
-  { city: 'China',  timezone: 'Asia/Shanghai',       subtitle: 'China / CST (UTC+8)' },
+  { city: 'China',  timezone: 'Asia/Shanghai',       subtitle: 'China / CST' },
   { city: 'Brazil', timezone: 'America/Sao_Paulo',   subtitle: 'Brazil / BRT' },
 ];

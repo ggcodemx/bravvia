@@ -12,14 +12,14 @@ const POST = {
   title: ['The waiting', 'game.'], // Dividido para el diseño de dos líneas
   titleItalic: 'game.', 
   readTime: '8 Min Read',
-  date: 'APR 2026',
+  date: 'Apr 2026',
   contributor: { name: 'Julian V. Bravvia', code: '0x4F2A', role: 'Principal' },
   tags: ['Strategy', 'Positioning', 'Market_Dynamics'],
   body: [
     {
       type: 'lead',
       text: 'Why brand indecision is itself a brand decision, and what the market reads when a company stays silent.',
-      highlight: 'brand indecision',
+     
     },
     {
       type: 'paragraph',
@@ -128,8 +128,7 @@ function ArticleImage({ src, caption }) {
         margin: '0 -2rem',
         aspectRatio: '16/7',
         background: '#111',
-        borderTop: '1px solid rgba(255,255,255,0.1)',
-        borderBottom: '1px solid rgba(255,255,255,0.1)',
+       
         overflow: 'hidden',
       }}
     >
@@ -219,8 +218,7 @@ function BodyBlock({ block }) {
           style={{
             maxWidth: '48rem',
             padding: '6rem 0',
-            borderTop: '1px solid rgba(255,255,255,0.05)',
-            borderBottom: '1px solid rgba(255,255,255,0.05)',
+     
           }}
         >
           <blockquote
@@ -277,7 +275,7 @@ function NextArticle({ next }) {
         overflow: 'hidden',
         background: 'white',
         cursor: 'none',
-        borderTop: '1px solid rgba(255,255,255,0.1)',
+       
         textDecoration: 'none',
       }}
       onMouseEnter={handleEnter}
@@ -471,9 +469,7 @@ export default function BlogPostPage() {
               color: 'rgba(204,204,204,0.6)',
             }}
           >
-            <span style={{ color: 'white' }}>Editorial {POST.number}</span>
-            <span style={{ display: 'block', width: '3rem', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
-            <span>{POST.location}</span>
+            
           </div>
 
           {/* Title */}
@@ -503,13 +499,6 @@ export default function BlogPostPage() {
             >
               {POST.readTime} • {POST.date}
             </span>
-            <div
-              style={{
-                height: '4rem',
-                width: '1px',
-                background: 'linear-gradient(to bottom, white, transparent)',
-              }}
-            />
           </div>
         </div>
       </section>
@@ -522,7 +511,7 @@ export default function BlogPostPage() {
             margin: '0 auto',
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: '8rem',
+            gap: '4rem',
           }}
         >
           {/* Two-column wrapper: sidebar + content */}
@@ -530,7 +519,7 @@ export default function BlogPostPage() {
             style={{
               display: 'grid',
               gridTemplateColumns: 'minmax(0,1fr)',
-              gap: '8rem',
+              gap: '4rem',
             }}
           >
             {/* Sidebar — visible solo en pantallas grandes via CSS */}
@@ -545,7 +534,7 @@ export default function BlogPostPage() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr',
-                gap: '8rem',
+                gap: '4rem',
                 alignItems: 'start',
               }}
             >
@@ -589,7 +578,7 @@ export default function BlogPostPage() {
               </aside>
 
               {/* Main content */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
                 {POST.body.map((block, i) => (
                   <BodyBlock key={i} block={block} />
                 ))}

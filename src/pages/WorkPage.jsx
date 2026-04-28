@@ -27,9 +27,8 @@ export default function WorkPage() {
             lineHeight: 0.95,
           }}
         >
-          Crafting Legacies
-          <br />
-          Through Radical Design.
+          Brave work for brave companies.
+          
         </h2>
       </section>
 

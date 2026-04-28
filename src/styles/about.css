@@ -26,6 +26,21 @@
   .about-hero-content {
     width: auto;
   }
+
+  .section-container {
+ padding-left: clamp(1.5rem, 10vw, 12rem);
+padding-right: clamp(1.5rem, 10vw, 12rem);
+}
+
+.about-hero {
+ padding-left: clamp(1.5rem, 10vw, 12rem);
+  padding-right: clamp(1.5rem, 10vw, 12rem);
+  padding-top: 0;
+}
+
+.pillars-section {
+  padding: 0 0rem 0rem!important;
+}
 }
 
 .philosophy-label {

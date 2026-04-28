@@ -5,6 +5,7 @@ import './styles/globals.css';
 import './styles/work.css';
 import './styles/about.css';
 import './styles/news.css';
+import './styles/footer.css';
 import { useCustomCursor } from './hooks/useCustomCursor';
 
 import Navbar   from './components/Navbar';

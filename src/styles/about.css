@@ -1,0 +1,216 @@
+/* Configuración General */
+.about-page {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  --side-padding: clamp(1.5rem, 8vw, 12rem);
+}
+
+/* --- Hero --- */
+.about-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+}
+
+.about-hero-content {
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  width: 100%;
+  max-width: 1200px; 
+}
+
+@media (max-width: 1024px) {
+  .about-hero-content {
+    width: auto;
+  }
+}
+
+.philosophy-label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.philosophy-text {
+  font-size: clamp(1.75rem, 5vw, 3rem); 
+  font-weight: 300;
+  line-height: 1.05;
+  text-align: justify;
+}
+
+/* --- Banner --- */
+.banner-container {
+  aspect-ratio: 21/9;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  filter: grayscale(1);
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    aspect-ratio: 16/9; /* Mejor proporción para móvil */
+  }
+  .philosophy-text {
+  text-align: left;
+}
+
+.section-container {
+ padding-left: clamp(1.5rem, 10vw, 12rem);
+padding-right: clamp(1.5rem, 10vw, 12rem);
+}
+
+.about-hero {
+ padding-left: clamp(1.5rem, 10vw, 12rem);
+  padding-right: clamp(1.5rem, 10vw, 12rem);
+  padding-top: 0;
+}
+
+.pillars-section {
+  padding: 0 0rem 0rem!important;
+}
+
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+/* --- Acordeón de Servicios --- */
+.section-container {
+  max-width: 90rem;
+  margin: 3rem auto;
+}
+
+.section-label {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.accordion-item {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  cursor: pointer;
+}
+
+.accordion-title {
+  font-size: clamp(2rem, 6vw, 3rem); /* Tu tamaño original */
+  font-weight: 400;
+  margin: 0;
+}
+
+.accordion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-line-h { width: 12px; height: 1px; background: white; }
+.icon-line-v {
+  width: 1px; height: 12px; background: white;
+  position: absolute;
+  transition: transform 0.4s, opacity 0.4s;
+}
+.icon-line-v.open { transform: rotate(90deg); opacity: 0; }
+
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content.is-open {
+  max-height: 1200px; /* Valor alto para permitir expansión */
+  opacity: 1;
+  padding-bottom: 4rem;
+}
+
+.accordion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .accordion-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .philosophy-text {
+
+  text-align: justify;
+}
+}
+
+.content-label { font-size: 1.25rem; margin-bottom: 1.5rem; opacity: 0.4; }
+.content-desc { line-height: 1.5; color: rgba(255,255,255,0.8); max-width: 500px; }
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 1rem; }
+.service-tag {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.tag-dot { width: 4px; height: 4px; background: white; }
+
+/* --- Pilares --- */
+.pillars-section {
+  padding: 4rem 2rem 8rem;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 5rem;
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pillar-title {
+  font-size: 2rem; /* Tu peso original */
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-text {
+  text-align: justify;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+.pillar-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin-top: 2rem;
+}

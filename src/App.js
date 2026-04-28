@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import './styles/globals.css';
+import './styles/work.css';
+import './styles/about.css';
+import './styles/news.css';
 import { useCustomCursor } from './hooks/useCustomCursor';
 
 import Navbar   from './components/Navbar';

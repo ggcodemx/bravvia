@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import { useState } from 'react';
+
 
 const services = [
   {
@@ -68,11 +68,8 @@ const pillars = [
   },
 ];
 
-
-
 export default function AboutPage() {
   useReveal();
-
   const [openIndex, setOpenIndex] = useState(0);
 
   useEffect(() => {
@@ -80,134 +77,66 @@ export default function AboutPage() {
   }, []);
 
   return (
-    // Forzamos el fondo negro y texto blanco desde el contenedor padre
-    <main style={{ background: 'black', color: 'white', minHeight: '100vh' }}>
+    <main className="about-page">
       
       {/* ── Hero ── */}
-      <section style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '8rem 2rem 4rem' }}>
-        <div style={{ margin: '0 12rem', width: '75%' }}>
-          <p className="reveal" style={{ fontSize: '1.5rem', fontWeight: 500, marginBottom: '3rem' }}>Our philosophy</p>
-          <p className="reveal" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)',  fontWeight: 300, lineHeight: 1.05, animationDelay: '0.2s', textAlign: 'justify' }}>
+      <section className="about-hero">
+        <div className="about-hero-content">
+          <p className="reveal philosophy-label">Our philosophy</p>
+          <p className="reveal philosophy-text">
             The courage to decide. The conviction to believe. The ambition to dream. <br /><br />
-Bravvia is a brand consultancy built on creative closeness and the strategy to make it last. We work with companies ready to define who they are, and we make sure it holds.
-<br /> <br />Not for everyone. For the brave.
-
+            Bravvia is a brand consultancy built on creative closeness and the strategy to make it last. 
+            We work with companies ready to define who they are, and we make sure it holds.
+            <br /> <br />Not for everyone. For the brave.
           </p>
         </div>
       </section>
 
       {/* ── Banner image ── */}
-      <section style={{ padding: '0 2rem', marginBottom: '2rem' }}>
-        <div className="reveal visual-zoom" style={{ aspectRatio: '21/9', width: '100%', overflow: 'hidden', background: '#111', filter: 'grayscale(1)' }}>
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbkvoZXaKrS-JTMco_8iMkkr7vX4vyHQlg2tuqvZYiabHBcsYAJ444m3Rl5xVa5WDTtePqn-KwFYvBpvacLprp1mfymlbDkUWogDQMCwzu2GO9CIIsVASvrlcmAij_5XFcvidzFtP1QkooTGqCj1sm3_qz7PJG701RUrMZO180vtVnlvWYXw0-mHNRn2POMUuDrxIbCsI_e2YClHsHR3vkLa77BQ_sDH1nrcV1ItPrhKPscw41uYLwvMKjhrKirPXmIo0FDbtSLHEw" alt="Architectural" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6 }} />
+      <section className="about-banner">
+        <div className="reveal visual-zoom banner-container">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbkvoZXaKrS-JTMco_8iMkkr7vX4vyHQlg2tuqvZYiabHBcsYAJ444m3Rl5xVa5WDTtePqn-KwFYvBpvacLprp1mfymlbDkUWogDQMCwzu2GO9CIIsVASvrlcmAij_5XFcvidzFtP1QkooTGqCj1sm3_qz7PJG701RUrMZO180vtVnlvWYXw0-mHNRn2POMUuDrxIbCsI_e2YClHsHR3vkLa77BQ_sDH1nrcV1ItPrhKPscw41uYLwvMKjhrKirPXmIo0FDbtSLHEw" alt="Architectural" className="banner-img" />
         </div>
       </section>
 
       {/* ── Services / Capabilities ── */}
-     <section style={{ padding: '4rem 2rem' }}>
-        <div style={{ maxWidth: '90rem', margin: '0 auto' }}>
-          <p className="reveal" style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.5 }}>
-            Our Services
-          </p>
+      <section className="services-section">
+        <div className="section-container">
+          <p className="reveal section-label">Our Services</p>
 
           <div className="reveal">
             {services.map((service, index) => {
               const isOpen = openIndex === index;
               return (
-                <div 
-                  key={service.category} 
-                  style={{ 
-                    borderTop: '1px solid rgba(255,255,255,0.2)',
-                    overflow: 'hidden',
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                  }}
-                >
-                  {/* Header de la Pestaña */}
+                <div key={service.category} className="accordion-item">
                   <div 
+                    className="accordion-header"
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    style={{ 
-                      display: 'flex', 
-                      justifyContent: 'space-between', 
-                      alignItems: 'center', 
-                      padding: '2.5rem 0', 
-                      cursor: 'pointer' 
-                    }}
                   >
-                    <h2 style={{ 
-                      fontSize: 'clamp(2rem, 6vw, 3rem)', 
-                      fontWeight: 400, 
-                      margin: 0, 
-                    
-                    }}>
-                      {service.category}
-                    </h2>
-                    
-                    {/* Icono interactivo (+ / -) */}
-                    <div style={{ 
-                      width: '40px', 
-                      height: '40px', 
-                      borderRadius: '50%', 
-                      border: '1px solid rgba(255,255,255,0.3)', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      position: 'relative'
-                    }}>
-                      <div style={{ width: '12px', height: '1px', background: 'white' }} />
-                      <div style={{ 
-                        width: '1px', 
-                        height: '12px', 
-                        background: 'white', 
-                        position: 'absolute',
-                        transition: 'transform 0.4s',
-                        transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
-                        opacity: isOpen ? 0 : 1
-                      }} />
+                    <h2 className="accordion-title">{service.category}</h2>
+                    <div className="accordion-icon">
+                      <div className="icon-line-h" />
+                      <div className={`icon-line-v ${isOpen ? 'open' : ''}`} />
                     </div>
                   </div>
 
-                  {/* Contenido Expandible */}
-                  <div style={{ 
-                    maxHeight: isOpen ? '600px' : '0px', 
-                    opacity: isOpen ? 1 : 0,
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    paddingBottom: isOpen ? '4rem' : '0rem'
-                  }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
-                      
-                      {/* Lado Izquierdo: Descripción (Approach) */}
+                  <div className={`accordion-content ${isOpen ? 'is-open' : ''}`}>
+                    <div className="accordion-grid">
                       <div>
-                        <p style={{ fontSize: '1.25rem', marginBottom: '1.5rem', opacity: 0.4 }}>
-                          Approach
-                        </p>
-                        <p style={{  lineHeight: 1.5, color: 'rgba(255,255,255,0.8)', maxWidth: '500px' }}>
-                          {service.description}
-                        </p>
+                        <p className="content-label">Approach</p>
+                        <p className="content-desc">{service.description}</p>
                       </div>
-
-                      {/* Lado Derecho: Lista de Items (Services) */}
                       <div>
-                        <p style={{ fontSize: '1.25rem', marginBottom: '1.5rem', opacity: 0.4 }}>
-                          What we do
-                        </p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                        <p className="content-label">What we do</p>
+                        <div className="tags-container">
                           {service.items.map((item) => (
-                            <span key={item} style={{ 
-                              
-                              padding: '0.5rem 1rem', 
-                              border: '1px solid rgba(255,255,255,0.1)',
-                              borderRadius: '2px',
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '0.5rem'
-                            }}>
-                              <div style={{ width: '4px', height: '4px', background: 'white' }} />
+                            <span key={item} className="service-tag">
+                              <div className="tag-dot" />
                               {item}
                             </span>
                           ))}
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -218,41 +147,22 @@ Bravvia is a brand consultancy built on creative closeness and the strategy to m
       </section>
 
       {/* ── Pillars ── */}
-      <section style={{ padding: '0rem 2rem', paddingBottom: '8rem' }}>
-        <div style={{ maxWidth: '90rem', margin: '0 auto' }}>
-          <p className="reveal" style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.5 }}>
-            Our Pillars
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '5rem' }}>
+      <section className="pillars-section">
+        <div className="section-container">
+          <p className="reveal section-label">Our Pillars</p>
+          <div className="pillars-grid">
             {pillars.map(({ title, text, delay }) => (
-              <div key={title} className="reveal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', animationDelay: delay }}>
-                <div style={{ paddingBottom: '2rem' }}>
-                  <h2 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>{title}</h2>
-                  <p style={{ textAlign: 'justify', fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{text}</p>
+              <div key={title} className="reveal pillar-card" style={{ animationDelay: delay }}>
+                <div className="pillar-body">
+                  <h2 className="pillar-title">{title}</h2>
+                  <p className="pillar-text">{text}</p>
                 </div>
-                <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
+                <div className="pillar-divider" />
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* ── Clients ── 
-      <section style={{ padding: '8rem 2rem' }}>
-        <div style={{ maxWidth: '90rem', margin: '0 auto' }}>
-          <h2 className="reveal" style={{ fontSize: '1.5rem', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '4rem' }}>
-            We've worked with
-          </h2>
-          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '5rem', alignItems: 'center' }}>
-            {clients.map(({ name, src }) => (
-              <div key={name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.4 }}>
-                <img src={src} alt={name} style={{ height: '1.5rem', filter: 'brightness(0) invert(1)', objectFit: 'contain' }} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
     </main>
   );
 }

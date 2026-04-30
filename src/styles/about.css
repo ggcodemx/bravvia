@@ -1,9 +1,13 @@
 /* Configuración General */
+:root {
+  --side-padding: clamp(1.5rem, 3.1rem, 12rem);
+}
+
 .about-page {
   background: black;
   color: white;
   min-height: 100vh;
-  --side-padding: clamp(1.5rem, 8vw, 12rem);
+ padding: var(--side-padding);
 }
 
 /* --- Hero --- */
@@ -12,36 +16,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 2rem 4rem;
 }
 
 .about-hero-content {
-  margin-left: var(--side-padding);
-  margin-right: var(--side-padding);
   width: 100%;
   max-width: 1200px; 
 }
 
-@media (max-width: 1024px) {
-  .about-hero-content {
-    width: auto;
-  }
 
-  .section-container {
- padding-left: clamp(1.5rem, 10vw, 12rem);
-padding-right: clamp(1.5rem, 10vw, 12rem);
-}
-
-.about-hero {
- padding-left: clamp(1.5rem, 10vw, 12rem);
-  padding-right: clamp(1.5rem, 10vw, 12rem);
-  padding-top: 0;
-}
-
-.pillars-section {
-  padding: 0 0rem 0rem!important;
-}
-}
 
 .philosophy-label {
   font-size: 1.5rem;
@@ -73,20 +55,13 @@ padding-right: clamp(1.5rem, 10vw, 12rem);
   text-align: left;
 }
 
-.section-container {
- padding-left: clamp(1.5rem, 10vw, 12rem);
-padding-right: clamp(1.5rem, 10vw, 12rem);
-}
+
 
 .about-hero {
- padding-left: clamp(1.5rem, 10vw, 12rem);
-  padding-right: clamp(1.5rem, 10vw, 12rem);
   padding-top: 0;
 }
 
-.pillars-section {
-  padding: 0 0rem 0rem!important;
-}
+
 
 }
 
@@ -100,7 +75,7 @@ padding-right: clamp(1.5rem, 10vw, 12rem);
 /* --- Acordeón de Servicios --- */
 .section-container {
   max-width: 90rem;
-  margin: 3rem auto;
+  margin-top: 3rem;;
 }
 
 .section-label {
@@ -176,6 +151,7 @@ padding-right: clamp(1.5rem, 10vw, 12rem);
 }
 }
 
+
 .content-label { font-size: 1.25rem; margin-bottom: 1.5rem; opacity: 0.4; }
 .content-desc { line-height: 1.5; color: rgba(255,255,255,0.8); max-width: 500px; }
 
@@ -192,9 +168,7 @@ padding-right: clamp(1.5rem, 10vw, 12rem);
 .tag-dot { width: 4px; height: 4px; background: white; }
 
 /* --- Pilares --- */
-.pillars-section {
-  padding: 4rem 2rem 8rem;
-}
+
 
 .pillars-grid {
   display: grid;

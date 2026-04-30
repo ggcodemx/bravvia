@@ -1,5 +1,5 @@
 :root {
-  --side-padding: clamp(1.5rem, 10vw, 12rem);
+  --side-padding: clamp(1.5rem, 3.1rem, 12rem);
 }
 
 /* --- Hero Section --- */
@@ -32,7 +32,7 @@
 .hero-tagline-container {
   position: absolute;
   bottom: 2.5rem;
-  left: var(--side-padding); /* Aplicando tu padding */
+  left: var(--side-padding);
   right: var(--side-padding);
   z-index: 50;
   mix-blend-mode: difference;

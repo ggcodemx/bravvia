@@ -128,10 +128,10 @@ To exercise any of these rights, please contact us at privacy@bravviaa.com. We w
 
         /* ── Hero ── */
         .pp-hero {
-          padding: 10rem 2rem 4rem;
+        padding: clamp(1.5rem, 3.1rem, 12rem);
           border-bottom: 1px solid rgba(255,255,255,0.1);
           max-width: 90rem;
-          margin: 0 auto;
+         padding-top: 12rem;
         }
 
         .pp-eyebrow {
@@ -147,7 +147,8 @@ To exercise any of these rights, please contact us at privacy@bravviaa.com. We w
           font-weight: 300;
           letter-spacing: -0.04em;
           line-height: 0.95;
-          margin: 0;
+          
+         
         }
 
         .pp-hero-meta {

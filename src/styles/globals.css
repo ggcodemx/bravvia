@@ -8,6 +8,7 @@
   --white-60: rgba(255,255,255,0.6);
   --white-30: rgba(255,255,255,0.3);
   --white-10: rgba(255,255,255,0.1);
+   --side-padding: clamp(1.5rem, 3.1rem, 12rem);
 }
 
 *, *::before, *::after {
@@ -247,8 +248,6 @@ body {
 .contact-page {
   background: black;
   color: white;
-  /* El padding que solicitaste */
-  --side-padding: clamp(1.5rem, 10vw, 12rem);
 }
 
 /* --- Hero --- */
@@ -266,7 +265,7 @@ body {
 
 /* --- Banner --- */
 .contact-banner {
-  padding: 0 var(--side-padding);
+  padding:  var(--side-padding);
   margin-bottom: 8rem;
 }
 
@@ -296,7 +295,6 @@ body {
 
 .contact-grid {
   max-width: 90rem;
-  margin: 0 auto;
   display: grid;
   /* Cambia a 1 columna en móvil y 2 en desktop */
   grid-template-columns: 1fr;

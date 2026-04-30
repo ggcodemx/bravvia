@@ -1,8 +1,9 @@
+
+
 .news-page {
   background: #000;
   color: #fff;
-  /* Aplicamos tu clamp solicitado */
-  --side-padding: clamp(1.5rem, 10vw, 12rem);
+  --side-padding: clamp(1.5rem, 3.1rem, 12rem);
 }
 
 /* --- Heading --- */
@@ -25,7 +26,7 @@
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 4rem 2.5rem;
 }
 
@@ -207,7 +208,11 @@
 }
 
 /* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .news-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
   .news-header { padding-top: 6rem; }
-  .news-grid { gap: 3rem 1.5rem; }
+  .news-grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; }
 }

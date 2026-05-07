@@ -85,8 +85,7 @@ export default function AboutPage() {
           <p className="reveal philosophy-label">Our philosophy</p>
           <p className="reveal philosophy-text">
             The courage to decide. The conviction to believe. The ambition to dream. <br /><br />
-            Bravvia is a brand consultancy built on creative closeness and the strategy to make it last. 
-            We work with companies ready to define who they are, and we make sure it holds.
+            Bravvia is a brand consultancy built to think deeply and work closely. We work with companies ready to define who they are, and we turn it into something the world can see.
             <br /> <br />Not for everyone. For the brave.
           </p>
         </div>

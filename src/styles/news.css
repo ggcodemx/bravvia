@@ -213,6 +213,7 @@
 }
 
 @media (max-width: 768px) {
-  .news-header { padding-top: 6rem; }
+  .news-header { padding-top: 2.5rem; }
   .news-grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; }
+  .news-grid-section { padding: 1rem var(--side-padding); }
 }

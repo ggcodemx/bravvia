@@ -1,7 +1,7 @@
 .work-page {
   padding-top: 15rem;
+  padding-top: clamp(1.5rem, 10vw, 15rem);;
   padding-bottom: 4rem;
-  /* El padding lateral se adapta: 12rem en desktop, 1.5rem en móvil */
   padding-left: clamp(1.5rem, 10vw, 12rem);
   padding-right: clamp(1.5rem, 10vw, 12rem);
 }
@@ -49,7 +49,7 @@
 /* Ajuste de espaciado superior para móviles */
 @media (max-width: 768px) {
   .work-page {
-    padding-top: 8rem; /* Menos espacio arriba en móvil para no scrollear infinito */
+    padding-top: 2.5rem; /* Menos espacio arriba en móvil para no scrollear infinito */
   }
   
   .work-header {

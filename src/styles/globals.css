@@ -373,11 +373,6 @@ body {
   gap: 3rem;
 }
 
-@media (min-width: 768px) {
-  .social-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 cols en tablet/desktop */
-  }
-}
 
 .social-label {
   font-size: 1rem;
@@ -398,9 +393,12 @@ body {
 
 /* --- Ajustes Móvil --- */
 @media (max-width: 768px) {
-  .contact-hero { padding-top: 8rem; }
+  .contact-hero { padding-top: 2.5rem; }
   .contact-info-section { padding-bottom: 2rem; }
   .banner-frame { aspect-ratio: 16/9; }
+   .social-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
 }
 
 /* BLOG INDIVIDUAL*/

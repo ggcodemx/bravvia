@@ -55,13 +55,9 @@
   text-align: left;
 }
 
-
-
 .about-hero {
-  padding-top: 0;
+  justify-content: start;
 }
-
-
 
 }
 

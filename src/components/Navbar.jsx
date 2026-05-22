@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { navLinks } from '../data';
 import { useThemeContext } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
@@ -7,10 +8,31 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const { theme } = useThemeContext();
   const isDark = theme === 'dark';
-  const textColor = isDark ? '#ffffff' : '#000000';
+
+  // En modo claro sobre el hero del home, forzamos blanco para que se lea sobre el video oscuro
+  const [overHero, setOverHero] = useState(pathname === '/');
+
+  useEffect(() => {
+    const isHome = pathname === '/';
+
+    if (!isHome) {
+      setOverHero(false);
+      return;
+    }
+
+    const check = () => setOverHero(window.scrollY < window.innerHeight * 0.85);
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    return () => window.removeEventListener('scroll', check);
+  }, [pathname]);
+
+  // En oscuro siempre blanco. En claro: blanco mientras estemos sobre el hero del home, negro en el resto.
+  const textColor = isDark ? '#ffffff' : overHero ? '#ffffff' : '#000000';
+  const logoFilter = isDark ? 'none' : overHero ? 'none' : 'invert(1)';
 
   return (
-    <nav className='main-nav'
+    <nav
+      className='main-nav'
       style={{
         position: 'fixed',
         top: 0,
@@ -21,6 +43,7 @@ export default function Navbar() {
         justifyContent: 'space-between',
         alignItems: 'flex-start',
         color: textColor,
+        transition: 'color 0.4s ease',
       }}
     >
       {/* Logo */}
@@ -31,7 +54,8 @@ export default function Navbar() {
           style={{
             height: '3.5rem',
             objectFit: 'contain',
-            filter: isDark ? 'none' : 'invert(1)',
+            filter: logoFilter,
+            transition: 'filter 0.4s ease',
           }}
           onError={(e) => {
             e.target.style.display = 'none';
@@ -44,6 +68,7 @@ export default function Navbar() {
             fontSize: '2.5rem',
             fontWeight: 300,
             color: textColor,
+            transition: 'color 0.4s ease',
           }}
         >
           Bravvia
@@ -60,7 +85,7 @@ export default function Navbar() {
               fontSize: '1.4rem',
               color: pathname === to ? 'var(--primary)' : textColor,
               textDecoration: 'none',
-              transition: 'color 0.2s',
+              transition: 'color 0.4s ease',
             }}
             onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
             onMouseLeave={(e) =>

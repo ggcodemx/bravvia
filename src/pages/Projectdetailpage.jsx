@@ -94,10 +94,10 @@ function ParallaxImage({ src, alt, style = {} }) {
 function TextBlock({ heading, body, delay = '0s' }) {
   return (
     <div className="reveal" style={{ animationDelay: delay }}>
-      <h2 style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '2.5rem', color: 'white' }}>
+      <h2 style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '2.5rem', color: 'var(--white)' }}>
         {heading}
       </h2>
-      <p style={{ color: 'rgba(204,204,204,0.6)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '28rem' }}>
+      <p style={{ color: 'var(--white-60)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '28rem' }}>
         {body}
       </p>
     </div>
@@ -219,10 +219,10 @@ export default function ProjectDetailPage() {
         {/* Content */}
         <div className="reveal" style={{ position: 'relative', zIndex: 10, maxWidth: '96rem', width: '100%', margin: '0 auto' }}>
           <div style={{ marginBottom: '3rem' }}>
-            <p style={{ fontSize: '1rem',  color: 'rgba(204,204,204,0.4)', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--white-30)', marginBottom: '1rem' }}>
               {project.label}
             </p>
-            <h1 style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', fontWeight: 300, letterSpacing: '-0.05em', color: 'white', lineHeight: 1, marginBottom: '5rem' }}>
+            <h1 style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', fontWeight: 300, letterSpacing: '-0.05em', color: 'var(--white)', lineHeight: 1, marginBottom: '5rem' }}>
               {project.title}
             </h1>
           </div>
@@ -231,10 +231,10 @@ export default function ProjectDetailPage() {
           <div className='meta-project' >
             {project.meta.map(({ label, value }) => (
               <div key={label}>
-                <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1rem', marginBottom: '0.75rem' }}>
+                <p style={{ color: 'var(--white-30)', fontSize: '1rem', marginBottom: '0.75rem' }}>
                   {label}
                 </p>
-                <p style={{ color: 'white', fontSize: '1.05rem', fontWeight: 300 }}>
+                <p style={{ color: 'var(--white)', fontSize: '1.05rem', fontWeight: 300 }}>
                   {value}
                 </p>
               </div>
@@ -282,8 +282,8 @@ export default function ProjectDetailPage() {
           <h2 style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>
             Identity System
           </h2>
-          <div style={{ height: '1px', width: '6rem', background: 'rgba(255,255,255,0.1)', margin: '0 auto 2.5rem' }} />
-          <p style={{ color: 'rgba(204,204,204,0.6)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '42rem', margin: '0 auto' }}>
+          <div style={{ height: '1px', width: '6rem', background: 'var(--white-10)', margin: '0 auto 2.5rem' }} />
+          <p style={{ color: 'var(--white-60)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '42rem', margin: '0 auto' }}>
             {project.identityText}
           </p>
         </div>
@@ -318,7 +318,7 @@ export default function ProjectDetailPage() {
       <section style={{ padding: '8rem 3rem' }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: '3rem' }} className="reveal">
           <h2 style={{ fontSize: '1.125rem', fontWeight: 500, letterSpacing: '-0.02em' }}>Digital Surface</h2>
-          <p style={{ color: 'rgba(204,204,204,0.6)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '36rem' }}>
+          <p style={{ color: 'var(--white-60)', fontSize: '1.125rem', lineHeight: 1.7, fontWeight: 300, letterSpacing: '-0.03em', maxWidth: '36rem' }}>
             {project.digitalSurfaceText}
           </p>
         </div>

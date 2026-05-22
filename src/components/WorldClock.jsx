@@ -1,14 +1,5 @@
 import { useClock } from '../hooks/useClock';
 
-/**
- * WorldClock
- * Shows a live time for one city/timezone.
- *
- * Props:
- *   city     – display name
- *   timezone – IANA timezone string
- *   subtitle – e.g. "United Kingdom / GMT+0"
- */
 export default function WorldClock({ city, timezone, subtitle }) {
   const time = useClock(timezone);
 
@@ -19,23 +10,17 @@ export default function WorldClock({ city, timezone, subtitle }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
-          borderBottom: '1px solid rgba(255,255,255,0.1)',
+          borderBottom: '1px solid var(--white-10)',
           paddingBottom: '1.5rem',
           marginBottom: '1rem',
         }}
       >
         <p style={{ fontSize: '1.5rem', fontWeight: 300, letterSpacing: '-0.02em' }}>{city}</p>
-        <p
-          style={{
-            fontSize: '1.25rem',
-            letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.8)',
-          }}
-        >
+        <p style={{ fontSize: '1.25rem', letterSpacing: '0.1em', color: 'var(--white-60)' }}>
           {time}
         </p>
       </div>
-      <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.3)' }}>{subtitle}</p>
+      <p style={{ fontSize: '1rem', color: 'var(--white-30)' }}>{subtitle}</p>
     </div>
   );
 }

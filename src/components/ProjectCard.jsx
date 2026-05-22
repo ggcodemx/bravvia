@@ -1,15 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-/**
- * ProjectCard
- * Displays a project image with hover scale + optional click bubble.
- *
- * Props:
- *   project  – project data object
- *   aspect   – CSS aspect-ratio string, e.g. "21/9" | "16/15" | "4/5"
- *   showMeta – show title/category/year below the image (default true)
- */
 export default function ProjectCard({ project, aspect = '21/9', showMeta = true }) {
   const bubbleRef = useRef(null);
   const containerRef = useRef(null);
@@ -31,7 +22,7 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
       onMouseMove={handleMouseMove}
       style={{
         aspectRatio: aspect,
-        background: '#18181b',
+        background: 'var(--white-10)',
         overflow: 'hidden',
         position: 'relative',
       }}
@@ -42,7 +33,6 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
         className="project-image"
         style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.85)' }}
       />
-      {/* Click bubble */}
       <div ref={bubbleRef} className="click-bubble">
         VIEW
       </div>
@@ -76,17 +66,17 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
                 letterSpacing: '-0.04em',
                 lineHeight: 1,
                 marginBottom: '0.5rem',
-                color: 'white',
+                color: 'var(--white)',
               }}
             >
               {project.title}
             </h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--white-60)' }}>
               {project.category}
             </p>
           </div>
           {project.year && (
-            <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)' }}>
+            <span style={{ fontSize: '1rem', color: 'var(--white-60)' }}>
               {project.year}
             </span>
           )}

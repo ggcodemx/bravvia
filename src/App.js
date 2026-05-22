@@ -7,7 +7,9 @@ import './styles/about.css';
 import './styles/news.css';
 import './styles/footer.css';
 import './styles/home.css';
+import './styles/theme.css';
 import { useCustomCursor } from './hooks/useCustomCursor';
+import { ThemeProvider } from './context/ThemeContext';
 
 import Navbar   from './components/Navbar';
 import Footer   from './components/Footer';
@@ -46,6 +48,7 @@ function ResponsiveCursor() {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <BrowserRouter>
       <div className="grain-overlay" aria-hidden="true" />
       <ResponsiveCursor />
@@ -64,5 +67,6 @@ export default function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </ThemeProvider>
   );
 }

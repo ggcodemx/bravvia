@@ -1,13 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import { navLinks } from '../data';
+import { useThemeContext } from '../context/ThemeContext';
+import ThemeToggle from './ThemeToggle';
 
-/**
- * Navbar
- * Fixed top nav with logo + vertical links on the right.
- * mix-blend-difference gives the invert effect over dark/light sections.
- */
 export default function Navbar() {
   const { pathname } = useLocation();
+  const { theme } = useThemeContext();
+  const isDark = theme === 'dark';
+  const textColor = isDark ? '#ffffff' : '#000000';
 
   return (
     <nav className='main-nav'
@@ -20,7 +20,7 @@ export default function Navbar() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-         color: '#ffffff'
+        color: textColor,
       }}
     >
       {/* Logo */}
@@ -28,7 +28,11 @@ export default function Navbar() {
         <img
           src="/Bravvia_logotipo_blanco.png"
           alt="Bravvia - branding agency"
-          style={{ height: '3.5rem', objectFit: 'contain' }}
+          style={{
+            height: '3.5rem',
+            objectFit: 'contain',
+            filter: isDark ? 'none' : 'invert(1)',
+          }}
           onError={(e) => {
             e.target.style.display = 'none';
             e.target.nextSibling.style.display = 'block';
@@ -39,15 +43,14 @@ export default function Navbar() {
             display: 'none',
             fontSize: '2.5rem',
             fontWeight: 300,
-            textDecorationStyle:'none',
-            color: 'white',
+            color: textColor,
           }}
         >
           Bravvia
         </span>
       </Link>
 
-      {/* Links */}
+      {/* Links + Toggle */}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
         {navLinks.map(({ label, to }) => (
           <Link
@@ -55,18 +58,19 @@ export default function Navbar() {
             to={to}
             style={{
               fontSize: '1.4rem',
-              color: pathname === to ? 'var(--primary)' : 'white',
+              color: pathname === to ? 'var(--primary)' : textColor,
               textDecoration: 'none',
               transition: 'color 0.2s',
             }}
             onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
             onMouseLeave={(e) =>
-              (e.target.style.color = pathname === to ? 'var(--primary)' : 'white')
+              (e.target.style.color = pathname === to ? 'var(--primary)' : textColor)
             }
           >
             {label}
           </Link>
         ))}
+        <ThemeToggle />
       </div>
     </nav>
   );

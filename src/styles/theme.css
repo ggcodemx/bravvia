@@ -1,0 +1,353 @@
+/* ─── Light Mode Overrides ───────────────────────────────
+   Applied when <html data-theme="light"> is set.
+   Import this file LAST in App.js so it wins on specificity ties.
+──────────────────────────────────────────────────────── */
+
+/* ── CSS variables ── */
+[data-theme="light"] {
+  --bg-dark: #ffffff;
+  --white: #000000;
+  --white-60: rgba(0, 0, 0, 0.6);
+  --white-30: rgba(0, 0, 0, 0.3);
+  --white-10: rgba(0, 0, 0, 0.08);
+  --text-muted: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Body ── */
+[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ── Custom Cursor ── */
+[data-theme="light"] .custom-cursor {
+  mix-blend-mode: multiply;
+}
+
+[data-theme="light"] .custom-cursor.cursor-hover {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* ── Utilities ── */
+[data-theme="light"] .text-outline {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .glass-morphism {
+  background: rgba(250, 230, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .click-bubble {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+/* ── Home ── */
+[data-theme="light"] .brand-statement {
+  background: #ffffff;
+}
+
+[data-theme="light"] .projects-scroll {
+  background: #ffffff;
+}
+
+[data-theme="light"] .home-news {
+  background: #ffffff;
+}
+
+[data-theme="light"] .statement-text {
+  color: #000000;
+}
+
+[data-theme="light"] .news-label {
+  color: #000000;
+}
+
+[data-theme="light"] .project-brand-type {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .project-description-text {
+  color: #000000;
+}
+
+[data-theme="light"] .all-news-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .all-news-link:hover {
+  color: var(--primary);
+}
+
+/* ── Footer ── */
+[data-theme="light"] .main-footer {
+  background: #f0f0f0;
+}
+
+[data-theme="light"] .brand-description {
+  color: #000000;
+}
+
+[data-theme="light"] .nav-link {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-email {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-email:hover {
+  color: var(--primary);
+}
+
+[data-theme="light"] .social-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .social-link:hover {
+  color: var(--primary);
+}
+
+/* ── About ── */
+[data-theme="light"] .about-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-theme="light"] .accordion-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .accordion-icon {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .icon-line-h {
+  background: black;
+}
+
+[data-theme="light"] .icon-line-v {
+  background: black;
+}
+
+[data-theme="light"] .content-desc {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .service-tag {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .tag-dot {
+  background: black;
+}
+
+[data-theme="light"] .pillar-text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .pillar-divider {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .banner-container {
+  background: #e0e0e0;
+}
+
+/* ── News Page ── */
+[data-theme="light"] .news-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-theme="light"] .news-card-image-wrapper {
+  background: #e0e0e0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .tag-dot {
+  background: black;
+}
+
+[data-theme="light"] .article-date {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .article-excerpt {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .article-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .btn-text {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .btn-line {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .load-more-btn:hover .btn-text {
+  color: #000000;
+}
+
+[data-theme="light"] .load-more-btn:hover .btn-line {
+  background: #000000;
+}
+
+[data-theme="light"] .end-archive {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .bubble-cursor {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .bubble-cursor span {
+  color: black;
+}
+
+/* ── Contact Page ── */
+[data-theme="light"] .contact-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-theme="light"] .banner-frame {
+  background: #e0e0e0;
+}
+
+[data-theme="light"] .label-text {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .label-text.white {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-email-link {
+  color: #000000;
+}
+
+[data-theme="light"] .contact-email-link:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .social-label {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* ── Blog Post Page ── */
+[data-theme="light"] .blog-post-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-theme="light"] .post-meta-info {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .iridescent-blob {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, rgba(100, 100, 100, 0.02) 50%, transparent 70%);
+}
+
+[data-theme="light"] .aside-label {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .contributor-details {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="light"] .tag-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .tag-link:hover {
+  color: #000000;
+}
+
+[data-theme="light"] .article-lead {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] .article-paragraph {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .glass-highlight {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #000000;
+}
+
+[data-theme="light"] .article-image-container {
+  background: #e0e0e0;
+}
+
+[data-theme="light"] .article-blockquote {
+  color: #000000;
+}
+
+[data-theme="light"] .quote-attribution {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .next-article-link {
+  background: #111111;
+}
+
+[data-theme="light"] .next-article-reveal-img {
+  background: #ffffff;
+}
+
+/* ── Privacy Page (pp-* classes injected via <style> tag) ── */
+[data-theme="light"] .pp-root {
+  background: #ffffff;
+  color: #000000;
+}
+
+[data-theme="light"] .pp-hero {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .pp-eyebrow {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .pp-num {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .pp-section-title {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="light"] .pp-right {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+[data-theme="light"] .pp-link {
+  color: #000000;
+  text-decoration-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .pp-link:hover {
+  text-decoration-color: #000000;
+}
+
+[data-theme="light"] .pp-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .pp-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}

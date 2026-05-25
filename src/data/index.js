@@ -1,3 +1,10 @@
+import soisVideo from '../media/SOIS.mp4';
+import wavesVideo from '../media/WAVES.mp4';
+import grabbieVideo from '../media/GRABBIE.mp4';
+import vittianVideo from '../media/VITTIAN.mp4';
+import integralVideo from '../media/INTEGRAL.mp4';
+import waysVideo from '../media/WAYS.mp4';
+
 // ─── Projects ──────────────────────────────────────────────────────────────
 export const projects = [
   {
@@ -5,7 +12,7 @@ export const projects = [
     title: 'SOIS',
     category: 'Global Campaign / Creative Direction',
     year: '2024',
-    image: '1.gif',
+    image: soisVideo,
     description:
       'A multi-sensory branding experience for the next generation of architectural studios. Defined by brutalist minimalism and light-leak aesthetics.',
     type: 'Brand',
@@ -16,7 +23,7 @@ export const projects = [
     title: 'Waves',
     category: 'Brand Experience',
     year: '2024',
-    image: '5.gif',
+    image: wavesVideo,
     description:
       'Reimagining the visual language of high-frequency trading platforms through mathematical precision and dark UI systems.',
     type: 'Brand',
@@ -27,7 +34,7 @@ export const projects = [
     title: 'Grabbie',
     category: 'Packaging',
     year: '2023',
-    image: 'fondo.mp4',
+    image: grabbieVideo,
     description:
       'A digital ecosystem designed for an avant-garde fashion house, focusing on the intersection of garment physics and web performance.',
     type: 'Brand',
@@ -38,7 +45,7 @@ export const projects = [
     title: 'Vittian',
     category: 'Global Campaign / Creative Direction',
     year: '2024',
-    image: '4.gif',
+    image: vittianVideo,
     description:
       'Web architecture built for speed and darkness. A custom e-commerce engine for luxury watchmakers.',
     type: 'Brand',
@@ -49,7 +56,7 @@ export const projects = [
     title: 'Integral Spaces',
     category: 'Brand Experience',
     year: '2023',
-    image: '3.gif',
+    image: integralVideo,
     description:
       'Designing the sensory environment for a private aerospace hub. Ambient light systems and minimal sonic feedback.',
     type: 'Brand',
@@ -60,7 +67,7 @@ export const projects = [
     title: 'Ways & Ways',
     category: 'Packaging',
     year: '2024',
-    image: '2.gif',
+    image: waysVideo,
     description:
       'A refined legal identity built on precision and authority. Typography-first branding for a premier law firm.',
     type: 'Brand',

@@ -27,11 +27,20 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
         position: 'relative',
       }}
     >
-      <img
-        src={project.image}
-        alt={project.title}
+      
+      <video
+        src={project.image} // Aquí recibe la ruta del video .mp4
+        autoPlay
+        loop
+        muted
+        playsInline
         className="project-image"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.85)' }}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover', 
+          filter: 'brightness(0.85)' 
+        }}
       />
       <div ref={bubbleRef} className="click-bubble">
         VIEW

@@ -200,3 +200,39 @@
     gap: 6rem;
   }
 }
+
+.intel-card-img {
+  transition: filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intel-card:hover .intel-card-img {
+  filter: blur(4px) brightness(0.6);
+}
+
+/* --- Adaptación de la burbuja dinámica de seguimiento --- */
+.bubble-cursor-container.dynamic-bubble {
+  position: absolute;
+  /* Dejamos que JS controle el posicionamiento exacto */
+  top: 0;
+  left: 0;
+  inset: auto; 
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.5);
+  /* Agregamos una transición suave solo para la opacidad y escala */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+/* Disparar la visibilidad al hacer hover sobre la tarjeta intel-card */
+@media (hover: hover) {
+  .intel-card:hover .bubble-cursor-container.dynamic-bubble {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -10,8 +10,10 @@ export default function NewsCard({ item, featured = false }) {
     if (!bubble || !container) return;
 
     const rect = container.getBoundingClientRect();
-    bubble.style.left = `${e.clientX - rect.left}px`;
-    bubble.style.top  = `${e.clientY - rect.top}px`;
+    
+    // Restamos 64px (la mitad de 8rem) para centrar la burbuja en la punta del cursor
+    bubble.style.left = `${e.clientX - rect.left - 64}px`;
+    bubble.style.top  = `${e.clientY - rect.top - 64}px`;
   };
 
   return (
@@ -21,7 +23,7 @@ export default function NewsCard({ item, featured = false }) {
     >
       <div
         ref={containerRef}
-        className="relative overflow-hidden"
+        className="intel-card-image-wrapper"
         onMouseMove={handleMouseMove}
         style={{
           position: 'relative',
@@ -31,16 +33,22 @@ export default function NewsCard({ item, featured = false }) {
           marginBottom: '1.5rem',
         }}
       >
-        <div ref={bubbleRef} className="click-bubble">CLICK</div>
+        {/* NUEVO: Contenedor dinámico del Bubble Cursor igual que tu primer código */}
+        <div ref={bubbleRef} className="bubble-cursor-container dynamic-bubble">
+          <div className="bubble-cursor">
+            <span>Read More</span>
+          </div>
+        </div>
 
         <img
           src={item.image}
           alt={item.title}
+          className="intel-card-img"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
 
         {/* Date badge */}
-        <div style={{ position: 'absolute', top: 0, left: 0 }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 11 }}>
           <span
             style={{
               padding: '0.25rem 0.75rem',

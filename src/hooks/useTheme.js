@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function useTheme() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('bravvia-theme') || 'dark';
+    return localStorage.getItem('bravvia-theme') || 'light';
   });
 
   useEffect(() => {
@@ -10,7 +10,7 @@ export function useTheme() {
     localStorage.setItem('bravvia-theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
 
   return { theme, toggleTheme };
 }

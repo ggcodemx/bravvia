@@ -79,12 +79,12 @@
 }
 
 [data-theme="light"] .all-news-link:hover {
-  color: var(--primary);
+  color: #000000
 }
 
 /* ── Footer ── */
 [data-theme="light"] .main-footer {
-  background: #f0f0f0;
+  background: #ffffff;
 }
 
 [data-theme="light"] .brand-description {
@@ -100,7 +100,7 @@
 }
 
 [data-theme="light"] .contact-email:hover {
-  color: var(--primary);
+  color: #000000;
 }
 
 [data-theme="light"] .social-link {
@@ -108,7 +108,7 @@
 }
 
 [data-theme="light"] .social-link:hover {
-  color: var(--primary);
+  color: #000000
 }
 
 /* ── About ── */

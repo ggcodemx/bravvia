@@ -56,7 +56,7 @@
 
 .column-title {
   font-size: 1rem;
-  color: var(--primary);
+
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
   font-weight: 500;
@@ -114,7 +114,7 @@
 
 /* --- Sección Logo Gigante --- */
 .logo-yellow-section {
-  background: var(--primary);
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@
 
 .big-logo-text {
   font-size: 18vw; /* Tamaño fluido basado en el ancho de pantalla */
-  color: #000;
+  color: #fff;
   line-height: 0.8;
   margin: 0;
   font-weight: 500;

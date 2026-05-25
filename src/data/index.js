@@ -27,7 +27,7 @@ export const projects = [
     title: 'Grabbie',
     category: 'Packaging',
     year: '2023',
-    image: '1.gif',
+    image: 'fondo.mp4',
     description:
       'A digital ecosystem designed for an avant-garde fashion house, focusing on the intersection of garment physics and web performance.',
     type: 'Brand',

@@ -44,8 +44,8 @@ export default function NewsCard({ item, featured = false }) {
           <span
             style={{
               padding: '0.25rem 0.75rem',
-              background: 'var(--primary)',
-              color: '#000000',
+              background: '#000000',
+              color: '#ffffff',
               fontSize: '0.625rem',
               fontWeight: 700,
               letterSpacing: '0.2em',

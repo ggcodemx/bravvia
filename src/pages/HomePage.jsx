@@ -4,7 +4,7 @@ import { useReveal } from '../hooks/useReveal';
 import ProjectCard from '../components/ProjectCard';
 import NewsCard from '../components/NewsCard';
 import { projects, news } from '../data';
-import videoFondo from '../media/fondo.mp4';
+import videoFondo from '../media/fondo.jpg';
 
 
 export default function HomePage() {
@@ -18,9 +18,7 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <main className="hero-section">
-        <video autoPlay muted loop playsInline className="hero-video">
-          <source src={videoFondo} type="video/mp4" />
-        </video>
+        <img src={videoFondo} alt="Hero background" className="hero-video" />
         <div className="hero-overlay" />
 
         <div className="hero-tagline-container">

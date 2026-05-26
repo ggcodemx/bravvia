@@ -31,7 +31,7 @@
   left: var(--side-padding);
   right: var(--side-padding);
   z-index: 50;
-  mix-blend-mode: difference;
+ 
 }
 
 .hero-tagline {

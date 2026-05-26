@@ -2,14 +2,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { navLinks } from '../data';
 import { useThemeContext } from '../context/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const { theme } = useThemeContext();
   const isDark = theme === 'dark';
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // En modo claro sobre el hero del home, forzamos blanco para que se lea sobre el video oscuro
   const [overHero, setOverHero] = useState(pathname === '/');
 
   useEffect(() => {
@@ -26,7 +25,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', check);
   }, [pathname]);
 
-  // En oscuro siempre blanco. En claro: blanco mientras estemos sobre el hero del home, negro en el resto.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   const textColor = isDark ? '#ffffff' : overHero ? '#ffffff' : '#000000';
   const logoFilter = isDark ? 'none' : overHero ? 'none' : 'invert(1)';
 
@@ -51,6 +53,7 @@ export default function Navbar() {
         <img
           src="/Bravvia_logotipo_blanco.png"
           alt="Bravvia - branding agency"
+          className="nav-logo"
           style={{
             height: '3.5rem',
             objectFit: 'contain',
@@ -75,8 +78,8 @@ export default function Navbar() {
         </span>
       </Link>
 
-      {/* Links + Toggle */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
+      {/* Desktop: links + toggle */}
+      <div className="nav-desktop">
         {navLinks.map(({ label, to }) => (
           <Link
             key={to}
@@ -95,7 +98,46 @@ export default function Navbar() {
             {label}
           </Link>
         ))}
-        <ThemeToggle />
+      </div>
+
+      {/* Mobile: hamburger button */}
+      <button
+        className="nav-hamburger"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Abrir menú"
+        style={{ color: textColor }}
+      >
+        <span className={`hamburger-bar ${menuOpen ? 'open-top' : ''}`} />
+        <span className={`hamburger-bar ${menuOpen ? 'open-mid' : ''}`} />
+        <span className={`hamburger-bar ${menuOpen ? 'open-bot' : ''}`} />
+      </button>
+
+      {/* Mobile: menú desplegable */}
+      <div
+        className={`nav-mobile-menu ${menuOpen ? 'nav-mobile-menu--open' : ''}`}
+        style={{ background: isDark ? '#0a0a0a' : '#ffffff' }}
+      >
+        <button
+          className="nav-mobile-close"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Cerrar menú"
+          style={{ color: isDark ? '#ffffff' : '#000000' }}
+        >
+          ✕
+        </button>
+        {navLinks.map(({ label, to }) => (
+          <Link
+            key={to}
+            to={to}
+            className="nav-mobile-link"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              color: pathname === to ? 'var(--primary)' : isDark ? '#ffffff' : '#000000',
+            }}
+          >
+            {label}
+          </Link>
+        ))}
       </div>
     </nav>
   );

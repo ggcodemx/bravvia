@@ -3,13 +3,10 @@
 .news-page {
   background: #000;
   color: #fff;
-  --side-padding: clamp(1.5rem, 3.1rem, 12rem);
+ padding: 0 var(--side-padding) 4rem;
 }
 
 /* --- Heading --- */
-.news-header {
-  padding: 8rem var(--side-padding) 3rem;
-}
 
 .news-page-title {
   font-size: clamp(2rem, 5vw, 3.75rem);
@@ -21,7 +18,7 @@
 
 /* --- Grid Section --- */
 .news-grid-section {
-  padding: 6rem var(--side-padding);
+  padding-top: 4rem ;
 }
 
 .news-grid {
@@ -215,5 +212,5 @@
 @media (max-width: 768px) {
   .news-header { padding-top: 2.5rem; }
   .news-grid { grid-template-columns: 1fr; gap: 3rem 1.5rem; }
-  .news-grid-section { padding: 1rem var(--side-padding); }
+ 
 }

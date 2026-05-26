@@ -1,18 +1,34 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default function ProjectCard({ project, aspect = '21/9', showMeta = true }) {
-  const bubbleRef = useRef(null);
   const containerRef = useRef(null);
+  const cursorRef    = useRef(null);
+  const [hovered, setHovered] = useState(false);
+
+  const globalCursor = () => document.querySelector('.custom-cursor');
 
   const handleMouseMove = (e) => {
-    const bubble = bubbleRef.current;
+    const cursor    = cursorRef.current;
     const container = containerRef.current;
-    if (!bubble || !container) return;
-
+    if (!cursor || !container) return;
     const rect = container.getBoundingClientRect();
-    bubble.style.left = `${e.clientX - rect.left}px`;
-    bubble.style.top  = `${e.clientY - rect.top}px`;
+    cursor.style.left = `${e.clientX - rect.left}px`;
+    cursor.style.top  = `${e.clientY - rect.top}px`;
+  };
+
+  const handleEnter = (e) => {
+    setHovered(true);
+    handleMouseMove(e);
+    const gc = globalCursor();
+    if (gc) gc.style.opacity = '0';
+  };
+
+  const handleLeave = () => {
+    setHovered(false);
+    const gc = globalCursor();
+    if (gc) gc.style.opacity = '';
   };
 
   const imageContent = (
@@ -20,36 +36,43 @@ export default function ProjectCard({ project, aspect = '21/9', showMeta = true 
       ref={containerRef}
       className="project-image-container"
       onMouseMove={handleMouseMove}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
       style={{
         aspectRatio: aspect,
         background: 'var(--white-10)',
         overflow: 'hidden',
         position: 'relative',
+        cursor: 'none',
       }}
     >
-      
       <video
-        src={project.image} // Aquí recibe la ruta del video .mp4
+        src={project.image}
         autoPlay
         loop
         muted
         playsInline
-        className="project-image"
-        style={{ 
-          width: '100%', 
-          height: '100%', 
-          objectFit: 'cover', 
-          filter: 'brightness(0.85)' 
-        }}
+        className={`project-image${hovered ? ' project-image--hovered' : ''}`}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.85)' }}
       />
-      <div ref={bubbleRef} className="click-bubble">
-        VIEW
+
+      {/* Arrow cursor */}
+      <div
+        ref={cursorRef}
+        className="project-arrow-cursor"
+        style={{ opacity: hovered ? 1 : 0 }}
+        aria-hidden="true"
+      >
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="24" x2="30" y2="6" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+          <polyline points="16,6 30,6 30,20" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
     </div>
   );
 
   return (
-    <div style={{ cursor: 'none' }}>
+    <div>
       {project.link ? (
         <Link to={project.link} style={{ display: 'block', textDecoration: 'none' }}>
           {imageContent}

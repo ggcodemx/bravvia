@@ -11,8 +11,9 @@ import './styles/theme.css';
 import { useCustomCursor } from './hooks/useCustomCursor';
 import { ThemeProvider } from './context/ThemeContext';
 
-import Navbar   from './components/Navbar';
-import Footer   from './components/Footer';
+import Navbar       from './components/Navbar';
+import Footer       from './components/Footer';
+import ThemeToggle  from './components/ThemeToggle';
 
 import HomePage    from './pages/HomePage';
 import WorkPage    from './pages/WorkPage';
@@ -27,6 +28,16 @@ function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
+}
+
+function PageWrapper({ children }) {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  return (
+    <main className={isHome ? undefined : 'page-offset'}>
+      {children}
+    </main>
+  );
 }
 
 function ResponsiveCursor() {
@@ -54,17 +65,22 @@ export default function App() {
       <ResponsiveCursor />
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/"        element={<HomePage />} />
-        <Route path="/work"    element={<WorkPage />} />
-        <Route path="/about"   element={<AboutPage />} />
-        <Route path="/news"    element={<NewsPage />} />
-        <Route path="/contact"    element={<ContactPage />} />
-        <Route path="/privacy"    element={<PrivacyPolicyPage />} />
-        <Route path="/news/:slug" element={<BlogPostPage />} />
-        <Route path="/work/:slug"  element={<ProjectDetailPage />} />
-        <Route path="*"           element={<HomePage />} />
-      </Routes>
+      <div className="theme-switch-fixed">
+        <ThemeToggle />
+      </div>
+      <PageWrapper>
+        <Routes>
+          <Route path="/"        element={<HomePage />} />
+          <Route path="/work"    element={<WorkPage />} />
+          <Route path="/about"   element={<AboutPage />} />
+          <Route path="/news"    element={<NewsPage />} />
+          <Route path="/contact"    element={<ContactPage />} />
+          <Route path="/privacy"    element={<PrivacyPolicyPage />} />
+          <Route path="/news/:slug" element={<BlogPostPage />} />
+          <Route path="/work/:slug"  element={<ProjectDetailPage />} />
+          <Route path="*"           element={<HomePage />} />
+        </Routes>
+      </PageWrapper>
       <Footer />
     </BrowserRouter>
     </ThemeProvider>

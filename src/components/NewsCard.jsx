@@ -1,30 +1,8 @@
-import { useRef } from 'react';
-
 export default function NewsCard({ item, featured = false }) {
-  const bubbleRef = useRef(null);
-  const containerRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    const bubble = bubbleRef.current;
-    const container = containerRef.current;
-    if (!bubble || !container) return;
-
-    const rect = container.getBoundingClientRect();
-    
-    // Restamos 64px (la mitad de 8rem) para centrar la burbuja en la punta del cursor
-    bubble.style.left = `${e.clientX - rect.left - 64}px`;
-    bubble.style.top  = `${e.clientY - rect.top - 64}px`;
-  };
-
   return (
-    <div
-      className="intel-card"
-      style={{ display: 'flex', flexDirection: 'column', cursor: 'none' }}
-    >
+    <div className="intel-card" style={{ display: 'flex', flexDirection: 'column' }}>
       <div
-        ref={containerRef}
         className="intel-card-image-wrapper"
-        onMouseMove={handleMouseMove}
         style={{
           position: 'relative',
           overflow: 'hidden',
@@ -33,13 +11,6 @@ export default function NewsCard({ item, featured = false }) {
           marginBottom: '1.5rem',
         }}
       >
-        {/* NUEVO: Contenedor dinámico del Bubble Cursor igual que tu primer código */}
-        <div ref={bubbleRef} className="bubble-cursor-container dynamic-bubble">
-          <div className="bubble-cursor">
-            <span>Read More</span>
-          </div>
-        </div>
-
         <img
           src={item.image}
           alt={item.title}
@@ -47,7 +18,10 @@ export default function NewsCard({ item, featured = false }) {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
 
-        {/* Date badge */}
+        <div className="intel-card-overlay">
+          <span className="intel-card-cta">Read more</span>
+        </div>
+
         <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 11 }}>
           <span
             style={{
@@ -67,13 +41,9 @@ export default function NewsCard({ item, featured = false }) {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-        <h3 className='news-title-home'
-          style={{
-            lineHeight: 1.3,
-            letterSpacing: '-0.02em',
-            color: 'var(--white)',
-            transition: 'color 0.2s',
-          }}
+        <h3
+          className="news-title-home"
+          style={{ lineHeight: 1.3, letterSpacing: '-0.02em', color: 'var(--white)' }}
         >
           {item.title}
         </h3>

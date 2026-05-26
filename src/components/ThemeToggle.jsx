@@ -3,28 +3,28 @@ import { useThemeContext } from '../context/ThemeContext';
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useThemeContext();
   const isDark = theme === 'dark';
-  const mutedColor = isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
+
+  const fg = isDark ? '#ffffff' : '#000000';
+  const trackBg     = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.07)';
+  const trackBorder = fg;
+  const thumbColor  = fg;
 
   return (
     <button
       onClick={toggleTheme}
+      className={`theme-switch ${isDark ? 'theme-switch--dark' : 'theme-switch--light'}`}
       aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '1.4rem',
-        color: mutedColor,
-        padding: 0,
-        lineHeight: 1,
-        transition: 'color 0.2s',
-        marginTop: '0.5rem',
-        display: 'block',
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')}
-      onMouseLeave={(e) => (e.currentTarget.style.color = mutedColor)}
+      title={isDark ? 'Modo claro' : 'Modo oscuro'}
     >
-      {isDark ? '☀' : '☽'}
+      <span
+        className="theme-switch__track"
+        style={{ background: trackBg, borderColor: trackBorder }}
+      >
+        <span
+          className="theme-switch__thumb"
+          style={{ background: thumbColor }}
+        />
+      </span>
     </button>
   );
 }

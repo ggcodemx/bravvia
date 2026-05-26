@@ -1,7 +1,6 @@
 :root {
-  --primary: #f0f000; 
+  --primary: #f0f000;
   --text-muted: rgba(255, 255, 255, 0.6);
-  --side-padding: clamp(1.5rem, 3.2rem, 12rem);
 }
 
 /* --- Main Footer --- */

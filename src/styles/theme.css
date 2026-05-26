@@ -8,7 +8,7 @@
   --bg-dark: #ffffff;
   --white: #000000;
   --white-60: rgba(0, 0, 0, 0.6);
-  --white-30: rgba(0, 0, 0, 0.3);
+  --white-30: rgba(0, 0, 0, 0.8);
   --white-10: rgba(0, 0, 0, 0.08);
   --text-muted: rgba(0, 0, 0, 0.5);
 }
@@ -21,12 +21,11 @@
 
 /* ── Custom Cursor ── */
 [data-theme="light"] .custom-cursor {
-  mix-blend-mode: multiply;
+  background: #000000;
 }
 
-[data-theme="light"] .custom-cursor.cursor-hover {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+[data-theme="dark"] .custom-cursor {
+  background: #ffffff;
 }
 
 /* ── Utilities ── */
@@ -86,6 +85,24 @@
 [data-theme="light"] .main-footer {
   background: #ffffff;
 }
+
+[data-theme="light"] .logo-yellow-section {
+  background: #000000;
+}
+
+[data-theme="light"] .big-logo-text {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .logo-yellow-section {
+  background: #ffffff;
+}
+
+[data-theme="dark"] .big-logo-text {
+  color: #000000;
+}
+
+
 
 [data-theme="light"] .brand-description {
   color: #000000;
@@ -225,7 +242,7 @@
 }
 
 [data-theme="light"] .label-text {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="light"] .label-text.white {
@@ -241,7 +258,7 @@
 }
 
 [data-theme="light"] .social-label {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* ── Blog Post Page ── */

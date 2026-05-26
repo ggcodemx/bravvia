@@ -1,9 +1,5 @@
 .work-page {
-  padding-top: 15rem;
-  padding-top: clamp(1.5rem, 10vw, 15rem);;
-  padding-bottom: 4rem;
-  padding-left: clamp(1.5rem, 10vw, 12rem);
-  padding-right: clamp(1.5rem, 10vw, 12rem);
+  padding: 0 var(--side-padding) 4rem;
 }
 
 .work-header {

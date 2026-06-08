@@ -247,8 +247,7 @@ body {
   }
 
   .hero-section {
-    margin-top: calc(-1 * var(--nav-height, 15rem));
-    z-index: 0 !important;
+    min-height: 100dvh;
   }
 
   .news-title-home {

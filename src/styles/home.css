@@ -51,7 +51,7 @@
 }
 
 .statement-container {
-  max-width: 72rem;
+  max-width: 60rem;
 }
 
 .statement-text {
@@ -72,8 +72,6 @@
 }
 
 .projects-container {
-  max-width: 90rem;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 10rem;
@@ -136,11 +134,6 @@
   padding: 6rem var(--side-padding) 2rem; 
   position: relative;
   overflow: hidden;
-}
-
-.news-container {
-  max-width: 88rem;
-  margin: 0 auto;
 }
 
 .news-label {

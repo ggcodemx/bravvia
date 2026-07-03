@@ -10,7 +10,8 @@
   --white-10: rgba(255,255,255,0.1);
 
   /* Espaciado global */
-  --side-padding: clamp(1.25rem, 4vw, 8rem);
+  --side-padding:     clamp(1.25rem, 4vw, 6rem);
+  --nav-side-padding: clamp(1.25rem, 3.9vw, 5.9rem);
   --gap:          clamp(2rem, 3vw, 3rem);
   --gap-section:  clamp(4rem, 8vw, 8rem);
 }
@@ -218,9 +219,9 @@ body {
   }
 
   :root {
-    --side-padding: 1.25rem;
     --gap:          1.5rem;
     --gap-section:  4rem;
+    --nav-v-pad:    1.2rem;
   }
 
   .main-nav {
@@ -239,10 +240,6 @@ body {
   }
 
   .nav-hamburger {
-    display: flex !important;
-  }
-
-  .nav-mobile-menu--open {
     display: flex !important;
   }
 
@@ -310,24 +307,62 @@ body {
 .hamburger-bar.open-bot  { transform: translateY(-7px) rotate(-45deg); }
 
 .nav-mobile-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 33.333%;
   height: 100dvh;
-  padding: 5rem 1.5rem 3rem;
+  padding: 5rem var(--nav-side-padding) 3rem;
   z-index: 48;
   overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1),
+              visibility 0s linear 0.6s;
+}
+
+.nav-mobile-menu--open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1),
+              visibility 0s linear 0s;
+}
+
+.nav-mobile-menu .nav-mobile-link {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s ease;
+}
+
+.nav-mobile-menu--open .nav-mobile-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-mobile-menu--open .nav-mobile-link:nth-child(2) { transition-delay: 0.15s; }
+.nav-mobile-menu--open .nav-mobile-link:nth-child(3) { transition-delay: 0.22s; }
+.nav-mobile-menu--open .nav-mobile-link:nth-child(4) { transition-delay: 0.29s; }
+.nav-mobile-menu--open .nav-mobile-link:nth-child(5) { transition-delay: 0.36s; }
+.nav-mobile-menu--open .nav-mobile-link:nth-child(6) { transition-delay: 0.43s; }
+
+@media (max-width: 768px) {
+  .nav-mobile-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }
 
 .nav-mobile-close {
   position: absolute;
-  top: 1.2rem;
-  right: 1.25rem;
+  top: var(--nav-v-pad, 1.2rem);
+  right: var(--nav-side-padding);
   background: none;
   border: none;
   cursor: pointer;
@@ -419,7 +454,7 @@ body {
 
 /* --- Banner --- */
 .contact-banner {
-  padding:  var(--side-padding);
+  padding: 0;
   margin-bottom: 8rem;
 }
 

@@ -23,7 +23,7 @@ export default function HomePage() {
 
         <div className="hero-tagline-container">
           <h2 className="hero-tagline">
-            Built by the brave. Built for the brave.
+          Built by the brave. Built for the brave.
           </h2>
         </div>
       </main>

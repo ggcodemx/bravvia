@@ -28,8 +28,8 @@
 .hero-tagline-container {
   position: absolute;
   bottom: 2.5rem;
-  left: var(--side-padding);
-  right: var(--side-padding);
+  left: var(--nav-side-padding);
+  right: var(--nav-side-padding);
   z-index: 50;
  
 }
